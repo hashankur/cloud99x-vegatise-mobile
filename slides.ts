@@ -12,21 +12,21 @@ const slides: Slides[] = [
     title: "Welcome to Vegatise",
     description:
       "A Platform To Earn Income Passively By Partnering With Brands",
-    image: require("../assets/images/slide1.png"),
+    image: require("./assets/images/slide1.png"),
   },
   {
     id: 2,
     title: "Get Paid",
     description:
       "A Platform To Earn Income Passively By Partnering With Brands",
-    image: require("../assets/images/slide1.png"),
+    image: require("./assets/images/slide1.png"),
   },
   {
     id: 3,
     title: "Explore",
     description:
       "A Platform To Earn Income Passively By Partnering With Brands",
-    image: require("../assets/images/slide1.png"),
+    image: require("./assets/images/slide1.png"),
   },
 ];
 export default slides;
