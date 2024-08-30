@@ -12,7 +12,7 @@ export default OnboardingItem = ({ item }) => {
 
   return (
     <View style={[styles.container, { width }]}>
-      <View style={{ flex: 0.3 }}>
+      <View>
         <Text style={styles.title}>{item.title}</Text>
         <Text style={styles.description}>{item.description}</Text>
       </View>
@@ -23,7 +23,7 @@ export default OnboardingItem = ({ item }) => {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
+    flex: 1,
     alignItems: "center",
     justifyContent: "center",
   },

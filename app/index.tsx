@@ -4,8 +4,8 @@ import Onboarding from "./Onboarding";
 export default function WelcomeScreen() {
   return (
     <>
-      <YStack f={1} ai="center" jc="center" px="$5" pt="$5">
-        <XStack ai="center" jc="center" fw="wrap">
+      <YStack>
+        <XStack>
           <Onboarding />
         </XStack>
       </YStack>
