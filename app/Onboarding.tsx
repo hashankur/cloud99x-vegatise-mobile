@@ -6,6 +6,7 @@ import {
   Dimensions,
   FlatList,
   View,
+  Animated,
 } from "react-native";
 import { Paragraph, XStack, YStack } from "tamagui";
 import slides from "slides";
@@ -17,6 +18,7 @@ const { width, height } = Dimensions.get("window");
 
 export default function Onboarding() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const scrollX = useRef(new Animated.Value(0)).current;
   const slideRef = useRef(null);
   const viewableitemsChanged = useRef(({ viewableItems }) => {
     setCurrentIndex(viewableItems[0].index);
@@ -35,11 +37,15 @@ export default function Onboarding() {
           keyExtractor={(item) => item.id}
           scrollEventThrottle={32}
           onViewableItemsChanged={viewableitemsChanged}
+          onScroll={Animated.event(
+            [{ nativeEvent: { contentOffset: { x: scrollX } } }],
+            { useNativeDriver: false }
+          )}
           viewabilityConfig={viewConfig}
           ref={slideRef}
         />
       </View>
-      {/* <Paginator data={slides} scrollX={scrollX} /> */}
+      <Paginator data={slides} scrollX={scrollX} />
       {/* <NextButton/> */}
     </View>
   );
