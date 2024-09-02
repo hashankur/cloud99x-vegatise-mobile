@@ -43,12 +43,14 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     backgroundColor: "#D33A3A",
     marginHorizontal: 5,
+    marginTop: 40,
+    marginBottom: 0,
   },
   text: {
     fontWeight: "100",
-    fontSize: 15,
+    fontSize: 20,
     marginBottom: 10,
-    paddingTop: 13,
+    paddingTop: 5,
     // textAlign: "center",
   },
 });

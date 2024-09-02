@@ -9,7 +9,7 @@ type Slides = {
 const slides: Slides[] = [
   {
     id: 1,
-    title: "Welcome to Vegatise",
+    title: "Welcome To Vegatise",
     description:
       "A Platform to Earn Income Passively By Partnering With Brands",
     image: require("./assets/images/slide1.png"),

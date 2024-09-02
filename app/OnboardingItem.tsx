@@ -28,19 +28,22 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   image: {
-    // flex: 0.5,
-    justifyContent: "center",
+    paddingTop: 45,
+    paddingBottom: 45,
   },
   title: {
-    fontWeight: "800",
+    fontWeight: "900",
     fontSize: 24,
     marginBottom: 10,
     paddingTop: 13,
+    paddingHorizontal: 8,
     // textAlign: "center",
   },
   description: {
-    fontWeight: "300",
+    fontWeight: "500",
+    fontSize: 18,
     marginBottom: 10,
+    paddingHorizontal: 8,
     // paddingHorizontal: 64,
   },
 });

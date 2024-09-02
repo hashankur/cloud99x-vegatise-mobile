@@ -16,8 +16,8 @@ import Svg, { G, Circle } from "react-native-svg";
 // import { ChevronRight } from "@tamagui/lucide-icons";
 
 export default NextButton = ({ percentage, scrollTo }) => {
-  const size = 128;
-  const strokeWidth = 8;
+  const size = 60;
+  const strokeWidth = 5;
   const center = size / 2;
   const radius = size / 2 - strokeWidth / 2;
   const circumference = 2 * Math.PI * radius;
@@ -65,12 +65,12 @@ export default NextButton = ({ percentage, scrollTo }) => {
             cx={center}
             cy={center}
             r={radius}
-            stroke="#d1d1d1"
+            stroke="#c2c2c2"
             strokeWidth={strokeWidth}
             fill="none"
           />
           <Circle
-            stroke="#f4338f"
+            stroke="#D33A3A"
             cx={center}
             cy={center}
             r={radius}
@@ -87,7 +87,7 @@ export default NextButton = ({ percentage, scrollTo }) => {
         activeOpacity={0.6}
       >
         <Text>
-          <Iconify icon="icon-park-solid:right-c" size={24} color="#D33A3A" />;
+          <Iconify icon="icon-park-solid:right-c" size={30} color="#D33A3A" />;
         </Text>
       </TouchableOpacity>
     </View>
@@ -103,6 +103,8 @@ const styles = StyleSheet.create({
   button: {
     position: "absolute",
     borderRadius: 100,
-    padding: 15,
+    color: "#D33A3A",
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
