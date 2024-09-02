@@ -34,8 +34,8 @@ export default function Onboarding() {
   };
 
   return (
-    <View>
-      <View>
+    <YStack mt={70} width={width}>
+      <YStack>
         <FlatList
           data={slides}
           renderItem={({ item }) => <OnboardingItem item={item} />}
@@ -52,21 +52,14 @@ export default function Onboarding() {
           viewabilityConfig={viewConfig}
           ref={slideRef}
         />
-      </View>
-      <View style={{ flexDirection: "row" }}>
+      </YStack>
+      <XStack jc={"space-between"} width={width} pt={100}>
         <Paginator data={slides} scrollX={scrollX} />
         <NextButton
           scrollTo={scrollTo}
           percentage={(currentIndex + 1) * (100 / slides.length)}
         />
-      </View>
-    </View>
+      </XStack>
+    </YStack>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

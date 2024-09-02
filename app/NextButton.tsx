@@ -13,6 +13,7 @@ import {
 } from "react-native";
 import { Iconify } from "react-native-iconify";
 import Svg, { G, Circle } from "react-native-svg";
+import { Paragraph, Stack } from "tamagui";
 // import { ChevronRight } from "@tamagui/lucide-icons";
 
 export default NextButton = ({ percentage, scrollTo }) => {
@@ -58,52 +59,50 @@ export default NextButton = ({ percentage, scrollTo }) => {
   }, []);
 
   return (
-    <View style={styles.container}>
-      <Svg width={size} height={size}>
-        <G rotation={"-90"} origin={center}>
-          <Circle
-            cx={center}
-            cy={center}
-            r={radius}
-            stroke="#c2c2c2"
-            strokeWidth={strokeWidth}
-            fill="none"
-          />
-          <Circle
-            stroke="#D33A3A"
-            cx={center}
-            cy={center}
-            r={radius}
-            fill="none"
-            strokeWidth={strokeWidth}
-            strokeDasharray={circumference}
-            strokeDashoffset={circumference - (circumference * 25) / 100}
-          />
-        </G>
-      </Svg>
-      <TouchableOpacity
-        onPress={scrollTo}
-        style={styles.button}
-        activeOpacity={0.6}
-      >
-        <Text>
-          <Iconify icon="icon-park-solid:right-c" size={30} color="#D33A3A" />;
-        </Text>
-      </TouchableOpacity>
-    </View>
+    <Stack px={25}>
+      <Stack flex={1} jc={"center"} ai={"center"} pt={0}>
+        <Svg width={size} height={size}>
+          <G rotation={"-90"} origin={center}>
+            <Circle
+              cx={center}
+              cy={center}
+              r={radius}
+              stroke="#c2c2c2"
+              strokeWidth={strokeWidth}
+              fill="none"
+            />
+            <Circle
+              stroke="#D33A3A"
+              cx={center}
+              cy={center}
+              r={radius}
+              fill="none"
+              strokeWidth={strokeWidth}
+              strokeDasharray={circumference}
+              strokeDashoffset={circumference - (circumference * 25) / 100}
+            />
+          </G>
+        </Svg>
+
+        <TouchableOpacity
+          onPress={scrollTo}
+          style={styles.button}
+          activeOpacity={0.6}
+        >
+          <Text>
+            <Iconify icon="icon-park-solid:right-c" size={45} color="#D33A3A" />
+          </Text>
+        </TouchableOpacity>
+      </Stack>
+    </Stack>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
   button: {
     position: "absolute",
     borderRadius: 100,
-    color: "#D33A3A",
+    color: "#c6b5b5",
     justifyContent: "center",
     alignItems: "center",
   },

@@ -6,44 +6,28 @@ import {
   Image,
   useWindowDimensions,
 } from "react-native";
+import { H1, Paragraph, XStack, YStack } from "tamagui";
 
 export default OnboardingItem = ({ item }) => {
   const { width } = useWindowDimensions();
 
   return (
-    <View style={[styles.container, { width }]}>
-      <View>
-        <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.description}>{item.description}</Text>
-      </View>
+    <YStack flex={1} width={width}>
+      <YStack pb={70}>
+        <Paragraph fontSize={25} fontWeight={700} pt={30} px={20}>
+          {item.title}
+        </Paragraph>
+        <Paragraph fontSize={16} fontWeight={500} px={20}>
+          {item.description}
+        </Paragraph>
+      </YStack>
       <Image source={item.image} style={[styles.image, { width }]} />
-    </View>
+    </YStack>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
   image: {
-    paddingTop: 45,
-    paddingBottom: 45,
-  },
-  title: {
-    fontWeight: "900",
-    fontSize: 24,
-    marginBottom: 10,
-    paddingTop: 13,
-    paddingHorizontal: 8,
-    // textAlign: "center",
-  },
-  description: {
-    fontWeight: "500",
-    fontSize: 18,
-    marginBottom: 10,
-    paddingHorizontal: 8,
-    // paddingHorizontal: 64,
+    justifyContent: "center",
   },
 });

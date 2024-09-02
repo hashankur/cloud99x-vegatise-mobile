@@ -6,14 +6,13 @@ import {
   Animated,
 } from "react-native";
 import React from "react";
-// import { Container, Key } from "@tamagui/lucide-icons";
-// import { Extrapolation } from "react-native-reanimated";
+import { Paragraph, XStack, YStack } from "tamagui";
 
 export default Paginator = ({ data, scrollX }) => {
   const { width } = useWindowDimensions();
   return (
-    <View>
-      <View style={{ flexDirection: "row", height: 64 }}>
+    <YStack pl={20}>
+      <XStack>
         {data.map((_, i) => {
           const inputRange = [(i - 1) * width, i * width, (i + 1) * width];
           const dotWidth = scrollX.interpolate({
@@ -31,9 +30,11 @@ export default Paginator = ({ data, scrollX }) => {
             />
           );
         })}
-      </View>
-      <Text style={styles.text}>Skip</Text>
-    </View>
+      </XStack>
+      <Paragraph fontSize={20} mt={20} pl={5}>
+        Skip
+      </Paragraph>
+    </YStack>
   );
 };
 
@@ -43,14 +44,5 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     backgroundColor: "#D33A3A",
     marginHorizontal: 5,
-    marginTop: 40,
-    marginBottom: 0,
-  },
-  text: {
-    fontWeight: "100",
-    fontSize: 20,
-    marginBottom: 10,
-    paddingTop: 5,
-    // textAlign: "center",
   },
 });
