@@ -5,7 +5,7 @@ export default function WelcomeScreen() {
   return (
     <>
       <YStack>
-        <XStack pt="$3">
+        <XStack pt="$0">
           <Onboarding />
         </XStack>
       </YStack>
