@@ -1,6 +1,6 @@
 import { animations, config, shorthands } from '@tamagui/config/v3'
-import { themes, tokens } from '@tamagui/themes'
-import { createFont, createTamagui } from 'tamagui'
+import { themes, tokens as baseTokens } from '@tamagui/themes'
+import { createFont, createTamagui, createTokens } from 'tamagui'
 
 const poppinsFace = {
   normal: { normal: 'Poppins400', italic: 'Poppins400Italic' },
@@ -26,6 +26,16 @@ const bodyFont = createFont({
   weight: config.fonts.body.weight,
   letterSpacing: config.fonts.body.letterSpacing,
   face: poppinsFace,
+})
+
+const tokens = createTokens({
+  ...baseTokens,
+  color: {
+    primary: '#F4422A',
+    secondary: '#E0EFFE',
+    link: '#576DBC',
+    label: '#5E6366',
+  },
 })
 
 export const appConfig = createTamagui({

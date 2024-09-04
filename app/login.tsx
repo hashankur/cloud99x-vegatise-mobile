@@ -1,10 +1,11 @@
+import { Iconify } from 'react-native-iconify'
 import {
   Adapt,
   Button,
   H4,
-  H5,
   Image,
   Input,
+  Label,
   Paragraph,
   Select,
   Sheet,
@@ -22,24 +23,28 @@ export default function LoginScreen() {
         <Image source={logo} width={200} objectFit="contain" />
         <H4 alignSelf="flex-start">Welcome To, Vegatise</H4>
 
-        <Tabs defaultValue="tab1" flexDirection="column" style={{ width: '100%' }}>
-          <Tabs.List alignSelf="center" mb="$5">
-            <Tabs.Tab value="tab1">
+        <Tabs defaultValue="tab1" flexDirection="column" w="100%">
+          <Tabs.List alignSelf="center" mb="$6">
+            <Tabs.Tab flex={1} value="tab1">
               <SizableText>Phone Number</SizableText>
             </Tabs.Tab>
-            <Tabs.Tab value="tab2">
+            <Tabs.Tab flex={1} value="tab2">
               <SizableText>Email</SizableText>
             </Tabs.Tab>
           </Tabs.List>
 
-          <Tabs.Content value="tab1" gap="$3">
-            <SizableText fontSize="$2" color="red">
+          {/* Tab Section - Phone Number */}
+          <Tabs.Content value="tab1">
+            <SizableText fontSize="$2" color="$label" mb="$1" fontWeight={600}>
               Phone Number
             </SizableText>
 
             <XStack gap="$2">
               <Select defaultValue="">
-                <Select.Trigger width="$10">
+                <Select.Trigger
+                  width="$10"
+                  iconAfter={<Iconify icon="mdi:chevron-down" size={24} />}
+                >
                   <Select.Value placeholder="+94" />
                 </Select.Trigger>
 
@@ -70,20 +75,64 @@ export default function LoginScreen() {
               <Input flex={1} placeholder="Enter Phone Number" />
             </XStack>
 
-            <Button disabled backgroundColor="$gray6">
+            <Button
+              disabled
+              backgroundColor="$primary"
+              color="white"
+              fontWeight={600}
+              mt="$6"
+            >
               Request OTP
             </Button>
           </Tabs.Content>
 
-          <Tabs.Content value="tab2">
-            <SizableText>Email</SizableText>
+          {/* Tab Section - Email */}
+          <Tabs.Content value="tab2" gap="$5">
+            <XStack flexWrap="wrap">
+              <Label
+                fontSize="$2"
+                color="$label"
+                fontWeight={600}
+                width="100%"
+                htmlFor="email"
+              >
+                Email Address
+              </Label>
+              <Input w="100%" id="email" placeholder="email@domain.com" />
+            </XStack>
+
+            <XStack flexWrap="wrap">
+              <Label
+                fontSize="$2"
+                color="$label"
+                fontWeight={600}
+                width="100%"
+                htmlFor="password"
+              >
+                Password
+              </Label>
+              <Input w="100%" id="password" />
+              <SizableText w="100%" pt="$2" textAlign="right" fontSize="$2" color="$link">
+                Forgot Password?
+              </SizableText>
+            </XStack>
+
+            <Button
+              disabled
+              backgroundColor="$primary"
+              color="white"
+              fontWeight={600}
+              mt="$2"
+            >
+              Login
+            </Button>
           </Tabs.Content>
         </Tabs>
 
-        <Paragraph> Not Registered Yet?</Paragraph>
-        <Button size="$2" color="red">
-          Create An Account
-        </Button>
+        <YStack alignItems="center" mt="$3">
+          <Paragraph>Not Registered Yet?</Paragraph>
+          <Button color="red">Create An Account</Button>
+        </YStack>
       </YStack>
     </>
   )
