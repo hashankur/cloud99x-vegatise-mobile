@@ -85,7 +85,7 @@ function RootLayoutNav() {
           />
 
           <Stack.Screen
-            name="login"
+            name="login/index"
             options={{
               headerShown: false,
             }}

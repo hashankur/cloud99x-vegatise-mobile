@@ -31,10 +31,12 @@ const bodyFont = createFont({
 const tokens = createTokens({
   ...baseTokens,
   color: {
-    primary: '#F4422A',
+    primary: '#C23030',
     secondary: '#E0EFFE',
     link: '#576DBC',
     label: '#5E6366',
+    bgAlt: '#EDEDED',
+    btn: '#F4422A',
   },
 })
 

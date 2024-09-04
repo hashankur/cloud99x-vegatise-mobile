@@ -14,12 +14,21 @@ import {
   XStack,
   YStack,
 } from 'tamagui'
-import logo from '../assets/images/logo.png'
+import logo from '../../assets/images/logo.png'
+import { router } from 'expo-router'
+import IslandTabs from '../../components/ui/IslandTabs'
 
 export default function LoginScreen() {
   return (
     <>
-      <YStack flex={1} alignItems="center" gap="$5" px="$5" pt="$5">
+      <YStack
+        flex={1}
+        alignItems="center"
+        gap="$5"
+        px="$5"
+        pt="$5"
+        backgroundColor="white"
+      >
         <Image source={logo} width={200} objectFit="contain" />
         <H4 alignSelf="flex-start">Welcome To, Vegatise</H4>
 
@@ -72,15 +81,17 @@ export default function LoginScreen() {
                 </Select.Content>
               </Select>
 
-              <Input flex={1} placeholder="Enter Phone Number" />
+              <Input flex={1} placeholder="769016274" />
             </XStack>
 
             <Button
-              disabled
-              backgroundColor="$primary"
+              backgroundColor="$btn"
               color="white"
               fontWeight={600}
               mt="$6"
+              onPress={() => {
+                router.navigate('/login/otp')
+              }}
             >
               Request OTP
             </Button>
@@ -119,7 +130,7 @@ export default function LoginScreen() {
 
             <Button
               disabled
-              backgroundColor="$primary"
+              backgroundColor="$btn"
               color="white"
               fontWeight={600}
               mt="$2"
@@ -131,7 +142,9 @@ export default function LoginScreen() {
 
         <YStack alignItems="center" mt="$3">
           <Paragraph>Not Registered Yet?</Paragraph>
-          <Button color="red">Create An Account</Button>
+          <Paragraph color="red" fontWeight={500} onPress={() => router.navigate('/')}>
+            Create An Account
+          </Paragraph>
         </YStack>
       </YStack>
     </>
