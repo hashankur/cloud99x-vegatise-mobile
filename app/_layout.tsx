@@ -92,6 +92,14 @@ function RootLayoutNav() {
           />
 
           <Stack.Screen
+            name="login/otp"
+            options={{
+              headerShadowVisible: false,
+              headerTitle: '',
+            }}
+          />
+
+          <Stack.Screen
             name="(tabs)"
             options={{
               headerShown: false,
