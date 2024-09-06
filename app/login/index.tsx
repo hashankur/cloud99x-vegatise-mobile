@@ -15,7 +15,7 @@ import {
   YStack,
 } from 'tamagui'
 import logo from '../../assets/images/logo.png'
-import { router } from 'expo-router'
+import { Link, router } from 'expo-router'
 import IslandTabs from '../../components/ui/IslandTabs'
 
 export default function LoginScreen() {
@@ -29,7 +29,7 @@ export default function LoginScreen() {
         pt="$5"
         backgroundColor="white"
       >
-        <Image source={logo} width={200} objectFit="contain" />
+        <Image source={logo} width={200} height={150} objectFit="contain" />
         <H4 alignSelf="flex-start">Welcome To, Vegatise</H4>
 
         <Tabs defaultValue="tab1" flexDirection="column" w="100%">
@@ -124,7 +124,7 @@ export default function LoginScreen() {
               </Label>
               <Input w="100%" id="password" />
               <SizableText w="100%" pt="$2" textAlign="right" fontSize="$2" color="$link">
-                Forgot Password?
+                <Link href="/forgot-password">Forgot Password?</Link>
               </SizableText>
             </XStack>
 
@@ -142,8 +142,8 @@ export default function LoginScreen() {
 
         <YStack alignItems="center" mt="$3">
           <Paragraph>Not Registered Yet?</Paragraph>
-          <Paragraph color="red" fontWeight={500} onPress={() => router.navigate('/')}>
-            Create An Account
+          <Paragraph color="red" fontWeight={500}>
+            <Link href="/">Create An Account</Link>
           </Paragraph>
         </YStack>
       </YStack>

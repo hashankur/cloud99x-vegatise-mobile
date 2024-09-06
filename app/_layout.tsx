@@ -100,6 +100,13 @@ function RootLayoutNav() {
           />
 
           <Stack.Screen
+            name="forgot-password/index"
+            options={{
+              headerShown: false,
+            }}
+          />
+
+          <Stack.Screen
             name="(tabs)"
             options={{
               headerShown: false,
