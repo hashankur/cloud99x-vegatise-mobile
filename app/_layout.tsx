@@ -107,6 +107,14 @@ function RootLayoutNav() {
           />
 
           <Stack.Screen
+            name="forgot-password/otp"
+            options={{
+              headerShadowVisible: false,
+              headerTitle: '',
+            }}
+          />
+
+          <Stack.Screen
             name="(tabs)"
             options={{
               headerShown: false,

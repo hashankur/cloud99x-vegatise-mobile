@@ -1,7 +1,8 @@
 import { Button, H4, Image, Input, Label, Paragraph, XStack, YStack } from 'tamagui'
 import logo from '../../assets/images/logo.png'
+import { router } from 'expo-router'
 
-export default function LoginScreen() {
+export default function ForgotPasswordScreen() {
   return (
     <>
       <YStack
@@ -27,13 +28,20 @@ export default function LoginScreen() {
           </Label>
           <Input w="100%" id="emailForgot" />
 
-          <Button w="100%" backgroundColor="$btn" color="white" fontWeight={600} mt="$8">
+          <Button
+            w="100%"
+            backgroundColor="$btn"
+            color="white"
+            fontWeight={600}
+            mt="$8"
+            onPress={() => router.navigate('/forgot-password/otp')}
+          >
             Send Code
           </Button>
         </XStack>
 
         <XStack gap="$2" mt="$5">
-          <Paragraph>Dont't Have An Account?</Paragraph>
+          <Paragraph>Don't Have An Account?</Paragraph>
           <Paragraph fontWeight={500} color="$primary">
             Create Account
           </Paragraph>
