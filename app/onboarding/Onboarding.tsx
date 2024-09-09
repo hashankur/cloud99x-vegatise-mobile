@@ -1,13 +1,5 @@
-import React, { useState, useRef } from "react";
-import {
-  SafeAreaView,
-  Text,
-  StyleSheet,
-  Dimensions,
-  FlatList,
-  View,
-  Animated,
-} from "react-native";
+import { useState, useRef } from "react";
+import { Dimensions, FlatList, Animated } from "react-native";
 import { Paragraph, XStack, YStack } from "tamagui";
 import slides from "slides";
 import OnboardingItem from "./OnboardingItem";
