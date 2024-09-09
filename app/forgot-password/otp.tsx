@@ -34,7 +34,7 @@ export default function ForgotPasswordOtpScreen() {
         color="white"
         fontWeight={600}
         onPress={() => {
-          router.navigate('/login/otp')
+          router.navigate('/forgot-password/new-password')
         }}
       >
         Verify
