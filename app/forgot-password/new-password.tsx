@@ -1,8 +1,20 @@
-import { Button, H4, H5, Image, Input, Label, Paragraph, XStack, YStack } from 'tamagui'
-import otpImage from '../../assets/images/otp2.png'
-import { router } from 'expo-router'
+import { Controller, useForm } from 'react-hook-form'
+import { Text } from 'react-native'
+import { Button, H4, Input, Label, Paragraph, XStack, YStack } from 'tamagui'
 
 export default function CreateNewPasswordScreen() {
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      password: '',
+      confirmPassword: '',
+    },
+  })
+  const onSubmit = (data) => console.log(data)
+
   return (
     <YStack flex={1} alignItems="center" gap="$1" px="$5" pt="$5" bg="white">
       <H4>Create New Password</H4>
@@ -17,10 +29,20 @@ export default function CreateNewPasswordScreen() {
         >
           Enter New Password
         </Label>
-        <Input w="100%" id="newPassword" />
+        <Controller
+          control={control}
+          rules={{
+            maxLength: 8,
+          }}
+          render={({ field: { onChange, onBlur, value } }) => (
+            <Input w="100%" onBlur={onBlur} onChangeText={onChange} value={value} />
+          )}
+          name="password"
+        />
+        {errors.password && <Text>This is required.</Text>}
         <Paragraph fontSize="$1" color="$label" mt="$2">
-          Password must be at least 8 Characters and must contain at least a Capital
-          Letter, a Number and a Special Character.
+          Password must be at least Characters and must contain at least a Capital Letter,
+          a Number and a Special Character.
         </Paragraph>
       </XStack>
 
@@ -34,7 +56,17 @@ export default function CreateNewPasswordScreen() {
         >
           Confirm Password
         </Label>
-        <Input w="100%" id="newPasswordConfirm" />
+        <Controller
+          control={control}
+          rules={{
+            required: true,
+          }}
+          render={({ field: { onChange, onBlur, value } }) => (
+            <Input w="100%" onBlur={onBlur} onChangeText={onChange} value={value} />
+          )}
+          name="confirmPassword"
+        />
+        {errors.confirmPassword && <Text>This is required.</Text>}
 
         <Button
           w="100%"
@@ -42,7 +74,8 @@ export default function CreateNewPasswordScreen() {
           color="white"
           fontWeight={600}
           mt="$8"
-          onPress={() => router.navigate('/login')}
+          // onPress={() => router.navigate('/login')}
+          onPress={handleSubmit(onSubmit)}
         >
           Save Changes
         </Button>
