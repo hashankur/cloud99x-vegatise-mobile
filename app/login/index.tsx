@@ -24,20 +24,9 @@ export default function LoginScreen() {
       <Image source={logo} width={200} height={150} objectFit="contain" />
       <H4 alignSelf="flex-start">Welcome To, Vegatise</H4>
 
-      <IslandTabs tabs={['Phone Number', 'Email']} />
-
-      <Tabs defaultValue="tab1" flexDirection="column" w="100%">
-        <Tabs.List alignSelf="center" mb="$6">
-          <Tabs.Tab flex={1} value="tab1">
-            <SizableText>Phone Number</SizableText>
-          </Tabs.Tab>
-          <Tabs.Tab flex={1} value="tab2">
-            <SizableText>Email</SizableText>
-          </Tabs.Tab>
-        </Tabs.List>
-
+      <IslandTabs tabs={['Phone Number', 'Email']}>
         {/* Tab Section - Phone Number */}
-        <Tabs.Content value="tab1">
+        <Tabs.Content value="tab1" minHeight={160}>
           <SizableText fontSize="$2" color="$label" mb="$1" fontWeight={600}>
             Phone Number
           </SizableText>
@@ -92,7 +81,7 @@ export default function LoginScreen() {
         </Tabs.Content>
 
         {/* Tab Section - Email */}
-        <Tabs.Content value="tab2" gap="$5">
+        <Tabs.Content value="tab2" gap="$5" minHeight={325}>
           <XStack flexWrap="wrap">
             <Label
               fontSize="$2"
@@ -126,14 +115,7 @@ export default function LoginScreen() {
             Login
           </Button>
         </Tabs.Content>
-      </Tabs>
-
-      <YStack alignItems="center" mt="$3">
-        <Paragraph>Not Registered Yet?</Paragraph>
-        <Paragraph color="red" fontWeight={500}>
-          <Link href="/">Create An Account</Link>
-        </Paragraph>
-      </YStack>
+      </IslandTabs>
     </YStack>
   )
 }

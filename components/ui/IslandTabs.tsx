@@ -1,8 +1,17 @@
+import { Link } from 'expo-router'
 import React from 'react'
 import type { StackProps, TabLayout, TabsTabProps } from 'tamagui'
-import { AnimatePresence, H5, SizableText, Tabs, YStack, styled } from 'tamagui'
+import {
+  AnimatePresence,
+  H5,
+  Paragraph,
+  SizableText,
+  Tabs,
+  YStack,
+  styled,
+} from 'tamagui'
 
-export default function IslandTabs({}) {
+export default function IslandTabs({ tabs, children }) {
   const [tabState, setTabState] = React.useState<{
     currentTab: string
     /**
@@ -53,13 +62,16 @@ export default function IslandTabs({}) {
       orientation="horizontal"
       size="$4"
       padding="$2"
-      height={150}
+      // height={150}
       flexDirection="column"
-      activationMode="manual"
+      // activationMode="manual"
       backgroundColor="white" // entire
       borderRadius="$4"
       // position="relative"
       w="100%"
+      // h="100%"
+      // minHeight={250}
+      f={1}
     >
       <YStack>
         <Tabs.List
@@ -103,7 +115,7 @@ export default function IslandTabs({}) {
             value="tab1"
             onInteraction={handleOnInteraction}
           >
-            <SizableText>Phone Number</SizableText>
+            <SizableText>{tabs[0]}</SizableText>
           </Tabs.Tab>
           <Tabs.Tab
             flex={1}
@@ -113,15 +125,19 @@ export default function IslandTabs({}) {
             value="tab2"
             onInteraction={handleOnInteraction}
           >
-            <SizableText>Email</SizableText>
+            <SizableText>{tabs[1]}</SizableText>
           </Tabs.Tab>
         </Tabs.List>
       </YStack>
       <AnimatePresence exitBeforeEnter custom={{ direction }} initial={false}>
         <AnimatedYStack key={currentTab}>
-          <Tabs.Content value={currentTab} forceMount flex={1} justifyContent="center">
-            <H5 textAlign="center">{currentTab}</H5>
-          </Tabs.Content>
+          {children}
+          <YStack alignItems="center" my="$3">
+            <Paragraph>Not Registered Yet?</Paragraph>
+            <Paragraph color="red" fontWeight={500}>
+              <Link href="/">Create An Account</Link>
+            </Paragraph>
+          </YStack>
         </AnimatedYStack>
       </AnimatePresence>
     </Tabs>
