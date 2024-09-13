@@ -72,6 +72,7 @@ export default function IslandTabs({ tabs, children }) {
       // h="100%"
       // minHeight={250}
       f={1}
+      zIndex={-1}
     >
       <YStack>
         <Tabs.List
@@ -115,7 +116,9 @@ export default function IslandTabs({ tabs, children }) {
             value="tab1"
             onInteraction={handleOnInteraction}
           >
-            <SizableText>{tabs[0]}</SizableText>
+            <SizableText fontWeight={600} fontSize="$2">
+              {tabs[0]}
+            </SizableText>
           </Tabs.Tab>
           <Tabs.Tab
             flex={1}
@@ -149,6 +152,10 @@ const TabsRovingIndicator = ({ active, ...props }: { active?: boolean } & StackP
     <YStack
       position="absolute"
       backgroundColor="white"
+      // shadowRadius="$2"
+      // shadowOffset={{ width: 1, height: 0 }}
+      // shadowOpacity={0.25}
+      // shadowColor="black"
       // opacity={0.7}
       animation="100ms"
       enterStyle={{

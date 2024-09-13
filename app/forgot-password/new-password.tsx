@@ -1,6 +1,7 @@
+import { VInput } from 'components/ui/Input'
 import { Controller, useForm } from 'react-hook-form'
 import { Text } from 'react-native'
-import { Button, H4, Input, Label, Paragraph, XStack, YStack } from 'tamagui'
+import { Button, H4, Label, Paragraph, XStack, YStack } from 'tamagui'
 
 export default function CreateNewPasswordScreen() {
   const {
@@ -20,22 +21,22 @@ export default function CreateNewPasswordScreen() {
       <H4>Create New Password</H4>
 
       <XStack flexWrap="wrap" mt="$5">
-        <Label
-          fontSize="$2"
-          color="$label"
-          fontWeight={600}
-          width="100%"
-          htmlFor="newPassword"
-        >
+        <Label fontSize="$2" color="$label" fontWeight={600} width="100%">
           Enter New Password
         </Label>
         <Controller
           control={control}
           rules={{
-            maxLength: 8,
+            minLength: 8,
+            required: true,
           }}
           render={({ field: { onChange, onBlur, value } }) => (
-            <Input w="100%" onBlur={onBlur} onChangeText={onChange} value={value} />
+            <VInput
+              type="password"
+              onBlur={onBlur}
+              onChangeText={onChange}
+              value={value}
+            />
           )}
           name="password"
         />
@@ -47,13 +48,7 @@ export default function CreateNewPasswordScreen() {
       </XStack>
 
       <XStack flexWrap="wrap" mt="$5">
-        <Label
-          fontSize="$2"
-          color="$label"
-          fontWeight={600}
-          width="100%"
-          htmlFor="newPasswordConfirm"
-        >
+        <Label fontSize="$2" color="$label" fontWeight={600} width="100%">
           Confirm Password
         </Label>
         <Controller
@@ -62,7 +57,12 @@ export default function CreateNewPasswordScreen() {
             required: true,
           }}
           render={({ field: { onChange, onBlur, value } }) => (
-            <Input w="100%" onBlur={onBlur} onChangeText={onChange} value={value} />
+            <VInput
+              type="password"
+              onBlur={onBlur}
+              onChangeText={onChange}
+              value={value}
+            />
           )}
           name="confirmPassword"
         />
