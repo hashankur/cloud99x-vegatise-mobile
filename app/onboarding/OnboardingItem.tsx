@@ -1,15 +1,9 @@
-import React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image,
-  useWindowDimensions,
-} from "react-native";
-import { H1, Paragraph, XStack, YStack } from "tamagui";
+import React from 'react'
+import { View, Text, StyleSheet, Image, useWindowDimensions } from 'react-native'
+import { H1, Paragraph, XStack, YStack } from 'tamagui'
 
-export default OnboardingItem = ({ item }) => {
-  const { width } = useWindowDimensions();
+export default (OnboardingItem = ({ item }) => {
+  const { width } = useWindowDimensions()
 
   return (
     <YStack flex={1} width={width}>
@@ -23,11 +17,11 @@ export default OnboardingItem = ({ item }) => {
       </YStack>
       <Image source={item.image} style={[styles.image, { width }]} />
     </YStack>
-  );
-};
+  )
+})
 
 const styles = StyleSheet.create({
   image: {
-    justifyContent: "center",
+    justifyContent: 'center',
   },
-});
+})
