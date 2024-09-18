@@ -85,6 +85,75 @@ function RootLayoutNav() {
           />
 
           <Stack.Screen
+            name="login/index"
+            options={{
+              headerShown: false,
+            }}
+          />
+
+          <Stack.Screen
+            name="login/otp"
+            options={{
+              headerShadowVisible: false,
+              headerTitle: '',
+            }}
+          />
+
+          <Stack.Screen
+            name="forgot-password/index"
+            options={{
+              headerShown: false,
+            }}
+          />
+
+          <Stack.Screen
+            name="forgot-password/otp"
+            options={{
+              headerShadowVisible: false,
+              headerTitle: '',
+            }}
+          />
+
+          <Stack.Screen
+            name="forgot-password/new-password"
+            options={{
+              headerShadowVisible: false,
+              headerTitle: '',
+            }}
+          />
+
+          <Stack.Screen
+            name="create-account/index"
+            options={{
+              headerShown: false,
+            }}
+          />
+
+          <Stack.Screen
+            name="create-account/otpRequest"
+            options={{
+              headerShadowVisible: false,
+              headerTitle: '',
+            }}
+          />
+
+          <Stack.Screen
+            name="create-account/otpEnter"
+            options={{
+              headerShadowVisible: false,
+              headerTitle: '',
+            }}
+          />
+
+          <Stack.Screen
+            name="create-account/otpVerify"
+            options={{
+              headerShadowVisible: false,
+              headerTitle: '',
+            }}
+          />
+
+          <Stack.Screen
             name="(tabs)"
             options={{
               headerShown: false,
