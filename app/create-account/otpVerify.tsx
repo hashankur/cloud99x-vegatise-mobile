@@ -26,7 +26,7 @@ export default function OtpVerifyScreen() {
         <VButton
           type="primary"
           onPress={() => {
-            router.navigate('/')
+            router.navigate('/permission')
           }}
           icon={<Spinner size="small" />}
         >
