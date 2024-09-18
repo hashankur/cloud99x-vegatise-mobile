@@ -1,6 +1,8 @@
 import { SizableText, View, styled } from 'tamagui'
 
-export const Text = styled(SizableText, {
+export const VText = styled(SizableText, {
+  fontSize: 12,
+
   variants: {
     type: {
       h1: {
@@ -19,9 +21,6 @@ export const Text = styled(SizableText, {
         fontSize: 16,
         fontWeight: 500,
       },
-      base: {
-        fontSize: 12,
-      },
       header: {
         fontSize: 20,
         fontWeight: 700,
@@ -30,14 +29,18 @@ export const Text = styled(SizableText, {
         fontSize: 12,
         fontWeight: 600,
       },
-    },
-    size: {
-      '...size': (size, { tokens }) => {
-        return {
-          width: tokens.size[size] ?? size,
-          height: tokens.size[size] ?? size,
-        }
+      label: {
+        fontWeight: 600,
+        color: '$label',
       },
     },
+    // size: {
+    //   '...size': (size, { tokens }) => {
+    //     return {
+    //       width: tokens.size[size] ?? size,
+    //       height: tokens.size[size] ?? size,
+    //     }
+    //   },
+    // },
   } as const,
 })

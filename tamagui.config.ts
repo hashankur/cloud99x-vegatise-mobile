@@ -4,6 +4,8 @@ import { createFont, createTamagui, createTokens } from 'tamagui'
 
 const poppinsFace = {
   normal: { normal: 'Poppins400', italic: 'Poppins400Italic' },
+  bold: { normal: 'Poppins700', italic: 'Poppins700Italic' },
+  400: { normal: 'Poppins400', italic: 'Poppins400Italic' },
   300: { normal: 'Poppins300', italic: 'Poppins300Italic' },
   500: { normal: 'Poppins500', italic: 'Poppins500Italic' },
   600: { normal: 'Poppins600', italic: 'Poppins600Italic' },
@@ -57,7 +59,7 @@ export const appConfig = createTamagui({
 export type AppConfig = typeof appConfig
 
 declare module 'tamagui' {
-  interface TamaguiCustomConfig extends AppConfig {}
+  interface TamaguiCustomConfig extends AppConfig { }
 }
 
 export default appConfig

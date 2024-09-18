@@ -1,108 +1,68 @@
+import { PasswordInput } from 'components/forms/password'
+import PhoneInput from 'components/forms/phone'
+import { VButton } from 'components/ui/Button'
 import { VInput } from 'components/ui/Input'
+import { VText } from 'components/ui/Text'
 import { Link, router } from 'expo-router'
-import { Iconify } from 'react-native-iconify'
 import {
-  Adapt,
-  Button,
-  H4,
   Image,
-  Label,
-  Select,
-  Sheet,
-  SizableText,
   Tabs,
-  XStack,
-  YStack,
+  YStack
 } from 'tamagui'
 import logo from '../../assets/images/logo.png'
-import IslandTabs from '../../components/ui/IslandTabs'
+import IslandTabs from '../../components/IslandTabs'
 
 export default function LoginScreen() {
   return (
-    <YStack flex={1} alignItems="center" gap="$5" px="$5" pt="$5" backgroundColor="white">
-      <Image source={logo} width={200} height={150} objectFit="contain" />
-      <H4 alignSelf="flex-start">Welcome To, Vegatise</H4>
+    <YStack flex={1} alignItems="center" gap="$8" px="$5" pt="$10" backgroundColor="white">
+      <Image source={logo} width={200} height={50} objectFit="contain" />
+      <VText type="h2" alignSelf='flex-start'>Welcome to, Vegatise</VText>
 
       <IslandTabs tabs={['Phone Number', 'Email']}>
         {/* Tab Section - Phone Number */}
-        <Tabs.Content value="tab1" minHeight={160}>
-          <SizableText fontSize="$2" color="$label" mb="$1" fontWeight={600}>
-            Phone Number
-          </SizableText>
+        <Tabs.Content value="tab1" gap="$5">
+          <YStack gap="$2">
+            <VText type="label">Phone Number</VText>
+            <PhoneInput />
+          </YStack>
 
-          <XStack gap="$2">
-            <Select.Trigger
-              width="$10"
-              iconAfter={<Iconify icon="mdi:chevron-down" size={24} />}
-            >
-              <Select.Value placeholder="+94" />
-            </Select.Trigger>
-
-            <XStack
-              alignItems="center"
-              gap="$2"
-              backgroundColor="whitesmoke"
-              borderRadius="$5"
-              w="100%"
-              flex={1}
-            >
-              <VInput placeholder="769016274" type="phone" />
-              <Button circular size="$1.5" backgroundColor="#c6eadd" mx="$3">
-                <Iconify icon="mingcute:check-fill" size={14} color="green" />
-              </Button>
-            </XStack>
-          </XStack>
-
-          <Button
-            backgroundColor="$btn"
-            color="white"
-            fontWeight={600}
-            mt="$6"
+          <VButton
+            type="primary"
             onPress={() => {
               router.navigate('/login/otp')
             }}
           >
             Request OTP
-          </Button>
+          </VButton>
         </Tabs.Content>
 
         {/* Tab Section - Email */}
-        <Tabs.Content value="tab2" gap="$5" minHeight={325}>
-          <XStack flexWrap="wrap">
-            <Label fontSize="$2" color="$label" fontWeight={600} width="100%">
-              Email Address
-            </Label>
+        <Tabs.Content value="tab2" gap="$5">
+          <YStack gap="$2">
+            <VText type="label">Email Address</VText>
             <VInput placeholder="email@domain.com" type="email" />
-          </XStack>
+          </YStack>
 
-          <XStack flexWrap="wrap">
-            <Label fontSize="$2" color="$label" fontWeight={600} width="100%">
-              Password
-            </Label>
-            <XStack
-              alignItems="center"
-              gap="$2"
-              backgroundColor="#EFF1F9"
-              borderRadius="$5"
-              w="100%"
-            >
-              <Button circular size="$1" ml="$3" disabled>
-                <Iconify icon="uil:lock-alt" size={20} color="gray" />
-              </Button>
-              <VInput type="password" />
-              <Button circular size="$1.5" mx="$3">
-                <Iconify icon="iconamoon:eye-off" size={16} color="black" />
-              </Button>
-            </XStack>
-            <SizableText w="100%" pt="$2" textAlign="right" fontSize="$2" color="$link">
+          <YStack gap="$2" w="100%">
+            <VText type="label">Password</VText>
+            <PasswordInput />
+
+            <VText color="$link" textAlign="right">
               <Link href="/forgot-password">Forgot Password?</Link>
-            </SizableText>
-          </XStack>
+            </VText>
+          </YStack>
 
-          <Button disabled backgroundColor="$btn" color="white" fontWeight={600} mt="$2">
+          <VButton type="primary">
             Login
-          </Button>
+          </VButton>
         </Tabs.Content>
+
+        <YStack alignItems="center" my="$8" gap="$1.5">
+          <VText type='h4' fontWeight={400}>Not Registered Yet?</VText>
+          <VText type="h4" color="$primary">
+            <Link href="/create-account">Create An Account</Link>
+          </VText>
+        </YStack>
       </IslandTabs>
     </YStack>
   )

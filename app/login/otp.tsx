@@ -1,40 +1,44 @@
 import { Button, H4, Image, Input, Paragraph, XStack, YStack } from 'tamagui'
 import otpImage from '../../assets/images/otp.png'
 import { router } from 'expo-router'
+import { VInput } from 'components/ui/Input'
+import { VText } from 'components/ui/Text'
+import { VButton } from 'components/ui/Button'
 
-export default function OtpScreen() {
+export default function LoginOtpScreen() {
   return (
-    <YStack flex={1} alignItems="center" gap="$1" px="$5" pt="$5" bg="white">
+    <YStack flex={1} alignItems="center" gap="$5" px="$5" pt="$5" bg="white">
       <Image source={otpImage} width={200} height={200} objectFit="contain" />
-      <H4>OTP Verification</H4>
-      <Paragraph>An 4 digit code has been sent to</Paragraph>
-      <Paragraph>+94 769016274</Paragraph>
+      <YStack gap="$5" w="100%">
+        <YStack alignItems='center'>
+          <VText type="h2" mb="$2">OTP Verification</VText>
+          <VText>An 4 Digit Code Has Been Sent To</VText>
+          <VText>+94 769016274</VText>
+        </YStack>
 
-      <XStack flexWrap="wrap" my="$5" gap="$3">
-        <Input width={50} height={50} textAlign="center" keyboardType="numeric" />
-        <Input width={50} height={50} textAlign="center" keyboardType="numeric" />
-        <Input width={50} height={50} textAlign="center" keyboardType="numeric" />
-        <Input width={50} height={50} textAlign="center" keyboardType="numeric" />
-      </XStack>
+        <XStack gap="$3.5" justifyContent="center">
+          <VInput type="otp" />
+          <VInput type="otp" />
+          <VInput type="otp" />
+          <VInput type="otp" />
+        </XStack>
 
-      <Button
-        width="100%"
-        backgroundColor="$btn"
-        color="white"
-        fontWeight={600}
-        onPress={() => {
-          router.navigate('/login/otp')
-        }}
-      >
-        Verify
-      </Button>
+        <VButton
+          type="primary"
+          onPress={() => {
+            router.navigate('/login/otp')
+          }}
+        >
+          Verify
+        </VButton>
+      </YStack>
 
-      <XStack gap="$2" mt="$8">
-        <Paragraph fontWeight={500}>Didn't Get Your OTP?</Paragraph>
-        <Paragraph fontWeight={500} textTransform="uppercase" color="$primary">
+      <VText mt="$5">
+        <VText type="h4">Didn't Get Your OTP? </VText>
+        <VText type="h4" textTransform="uppercase" color="#C23030">
           Resend It
-        </Paragraph>
-      </XStack>
+        </VText>
+      </VText>
     </YStack>
   )
 }
