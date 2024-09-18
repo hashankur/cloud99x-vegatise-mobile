@@ -5,7 +5,7 @@ import { router } from 'expo-router'
 import { Image, YStack } from 'tamagui'
 import permissionImage from '../../assets/images/permission.png'
 
-export default function OtpRequestScreen() {
+export default function Permission() {
   return (
     <YStack flex={1} justifyContent='center' alignItems="center" gap="$5" px="$5" pt="$5" bg="white">
       <YStack gap="$15" w="100%">
@@ -16,7 +16,7 @@ export default function OtpRequestScreen() {
         <VButton
           type="primary"
           onPress={() => {
-            router.navigate('/permission/checkPermission')
+            router.navigate('/permission/checkPermissions')
           }}
         >
           Next
