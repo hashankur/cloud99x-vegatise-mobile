@@ -123,6 +123,37 @@ function RootLayoutNav() {
           />
 
           <Stack.Screen
+            name="create-account/index"
+            options={{
+              headerShown: false,
+            }}
+          />
+
+          <Stack.Screen
+            name="create-account/otpRequest"
+            options={{
+              headerShadowVisible: false,
+              headerTitle: '',
+            }}
+          />
+
+          <Stack.Screen
+            name="create-account/otpEnter"
+            options={{
+              headerShadowVisible: false,
+              headerTitle: '',
+            }}
+          />
+
+          <Stack.Screen
+            name="create-account/otpVerify"
+            options={{
+              headerShadowVisible: false,
+              headerTitle: '',
+            }}
+          />
+
+          <Stack.Screen
             name="(tabs)"
             options={{
               headerShown: false,
