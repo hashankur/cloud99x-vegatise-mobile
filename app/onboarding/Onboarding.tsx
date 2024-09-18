@@ -50,6 +50,7 @@ export default function Onboarding() {
         <NextButton
           scrollTo={scrollTo}
           percentage={(currentIndex + 1) * (100 / slides.length)}
+          buttonPercentage={currentIndex}
         />
       </XStack>
     </YStack>
