@@ -159,6 +159,20 @@ function RootLayoutNav() {
               headerShown: false,
             }}
           />
+          <Stack.Screen
+            name="permission/checkPermissions"
+            options={{
+              headerShadowVisible: false,
+              headerTitle: '',
+            }}
+          />
+          <Stack.Screen
+            name="permission/index"
+            options={{
+              headerShadowVisible: false,
+              headerTitle: '',
+            }}
+          />
 
           <Stack.Screen
             name="modal"
