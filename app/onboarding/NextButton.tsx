@@ -16,7 +16,7 @@ import Svg, { G, Circle } from 'react-native-svg'
 import { Paragraph, Stack } from 'tamagui'
 // import { ChevronRight } from "@tamagui/lucide-icons";
 
-export default NextButton = ({ percentage, scrollTo, buttonPercentage }) => {
+export default function NextButton({ percentage, scrollTo, buttonPercentage }) {
   const size = 60;
   const strokeWidth = 5;
   const center = size / 2;
@@ -93,7 +93,7 @@ export default NextButton = ({ percentage, scrollTo, buttonPercentage }) => {
       </Stack>
     </Stack>
   )
-})
+}
 
 const styles = StyleSheet.create({
   button: {

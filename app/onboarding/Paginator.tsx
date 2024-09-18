@@ -3,7 +3,7 @@ import React from 'react'
 import { Paragraph, XStack, YStack } from 'tamagui'
 import { Link } from 'expo-router'
 
-export default (Paginator = ({ data, scrollX }) => {
+export default function Paginator({ data, scrollX }) {
   const { width } = useWindowDimensions()
   return (
     <YStack pl={20}>
@@ -28,7 +28,7 @@ export default (Paginator = ({ data, scrollX }) => {
       </Paragraph>
     </YStack>
   )
-})
+}
 
 const styles = StyleSheet.create({
   dot: {

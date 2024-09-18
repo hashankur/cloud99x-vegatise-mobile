@@ -2,7 +2,7 @@ import React from 'react'
 import { View, Text, StyleSheet, Image, useWindowDimensions } from 'react-native'
 import { H1, Paragraph, XStack, YStack } from 'tamagui'
 
-export default (OnboardingItem = ({ item }) => {
+export default function OnboardingItem({ item }) {
   const { width } = useWindowDimensions()
 
   return (
@@ -18,7 +18,7 @@ export default (OnboardingItem = ({ item }) => {
       <Image source={item.image} style={[styles.image, { width }]} />
     </YStack>
   )
-})
+}
 
 const styles = StyleSheet.create({
   image: {
