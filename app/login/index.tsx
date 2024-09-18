@@ -52,7 +52,7 @@ export default function LoginScreen() {
             </VText>
           </YStack>
 
-          <VButton type="primary">
+          <VButton type="primary" onPress={() => router.navigate('/required-steps')}>
             Login
           </VButton>
         </Tabs.Content>

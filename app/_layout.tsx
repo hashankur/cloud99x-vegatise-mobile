@@ -154,6 +154,14 @@ function RootLayoutNav() {
           />
 
           <Stack.Screen
+            name="required-steps/index"
+            options={{
+              headerShadowVisible: false,
+              headerTitle: '',
+            }}
+          />
+
+          <Stack.Screen
             name="(tabs)"
             options={{
               headerShown: false,
