@@ -1,4 +1,4 @@
-import { Button, H4, Image, Input, Paragraph, XStack, YStack } from 'tamagui'
+import { XStack, YStack } from 'tamagui'
 import { router } from 'expo-router'
 import { VInput } from 'components/ui/Input'
 import { VText } from 'components/ui/Text'
@@ -34,7 +34,6 @@ export default function OtpEnterScreen() {
       >
         Verify
       </VButton>
-
     </YStack>
   )
 }
