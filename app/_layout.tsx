@@ -162,11 +162,21 @@ function RootLayoutNav() {
           />
 
           <Stack.Screen
-            name="(tabs)"
+            name="required-steps/personalInformation"
             options={{
-              headerShown: false,
+              headerTitle: 'Getting Started',
+              statusBarColor: '#C23030',
+              headerStyle: {
+                backgroundColor: '#C23030',
+              },
+              headerTitleStyle: {
+                color: '#F4F4F4',
+                fontSize: 20,
+                fontWeight: "bold",
+              },
             }}
           />
+
           <Stack.Screen
             name="permission/checkPermissions"
             options={{
@@ -174,11 +184,19 @@ function RootLayoutNav() {
               headerTitle: '',
             }}
           />
+
           <Stack.Screen
             name="permission/index"
             options={{
               headerShadowVisible: false,
               headerTitle: '',
+            }}
+          />
+
+          <Stack.Screen
+            name="(tabs)"
+            options={{
+              headerShown: false,
             }}
           />
 

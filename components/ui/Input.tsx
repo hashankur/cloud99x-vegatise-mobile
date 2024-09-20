@@ -37,6 +37,10 @@ export const VInput = styled(Input, {
         textAlign: 'center',
         maxLength: 1,
       },
+      date: {
+        textContentType: 'birthdate',
+        showSoftInputOnFocus: false,
+      },
     },
     state: {
       error: {
