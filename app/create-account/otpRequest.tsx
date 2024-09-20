@@ -10,9 +10,13 @@ export default function OtpRequestScreen() {
     <YStack flex={1} alignItems="center" gap="$5" px="$5" pt="$5" bg="white">
       <Image source={otpImage} width={200} height={200} objectFit="contain" />
       <YStack gap="$5" w="100%">
-        <YStack alignItems='center'>
-          <VText type="h2" mb="$2">OTP Verification</VText>
-          <VText w={220} textAlign='center'>We Will Send You A One Time Password On This Mobile Number</VText>
+        <YStack alignItems="center">
+          <VText type="h2" mb="$2">
+            OTP Verification
+          </VText>
+          <VText w={220} textAlign="center">
+            We Will Send You A One Time Password On This Mobile Number
+          </VText>
         </YStack>
 
         <YStack w="100%" gap="$2">

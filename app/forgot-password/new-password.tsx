@@ -31,11 +31,7 @@ export default function CreateNewPasswordScreen() {
             required: true,
           }}
           render={({ field: { onChange, onBlur, value } }) => (
-            <PasswordInput
-              onBlur={onBlur}
-              onChangeText={onChange}
-              value={value}
-            />
+            <PasswordInput onBlur={onBlur} onChangeText={onChange} value={value} />
           )}
           name="password"
         />
@@ -43,12 +39,22 @@ export default function CreateNewPasswordScreen() {
 
         <VText color="$label">
           Password must be at least
-          <VText color="green" fontWeight={600}> 8 Characters </VText>
+          <VText color="green" fontWeight={600}>
+            {' 8 Characters '}
+          </VText>
           and must contain at least
-          <VText color="green" fontWeight={600}> a Capital Letter</VText>,
-          <VText color="green" fontWeight={600}> a Number </VText>
+          <VText color="green" fontWeight={600}>
+            {' a Capital Letter'}
+          </VText>
+          ,
+          <VText color="green" fontWeight={600}>
+            {' a Number '}
+          </VText>
           and a
-          <VText color="green" fontWeight={600}> Special Character</VText>.
+          <VText color="green" fontWeight={600}>
+            {' Special Character'}
+          </VText>
+          .
         </VText>
       </YStack>
 
@@ -60,11 +66,7 @@ export default function CreateNewPasswordScreen() {
             required: true,
           }}
           render={({ field: { onChange, onBlur, value } }) => (
-            <PasswordInput
-              onBlur={onBlur}
-              onChangeText={onChange}
-              value={value}
-            />
+            <PasswordInput onBlur={onBlur} onChangeText={onChange} value={value} />
           )}
           name="confirmPassword"
         />

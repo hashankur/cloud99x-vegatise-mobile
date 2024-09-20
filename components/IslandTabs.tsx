@@ -1,12 +1,6 @@
 import React from 'react'
 import type { StackProps, TabLayout, TabsTabProps } from 'tamagui'
-import {
-  AnimatePresence,
-  SizableText,
-  Tabs,
-  YStack,
-  styled,
-} from 'tamagui'
+import { AnimatePresence, SizableText, Tabs, YStack, styled } from 'tamagui'
 import { VText } from './ui/Text'
 
 export default function IslandTabs({ tabs, children }) {
@@ -113,9 +107,7 @@ export default function IslandTabs({ tabs, children }) {
             value="tab1"
             onInteraction={handleOnInteraction}
           >
-            <VText>
-              {tabs[0]}
-            </VText>
+            <VText>{tabs[0]}</VText>
           </Tabs.Tab>
           <Tabs.Tab
             flex={1}
@@ -130,9 +122,7 @@ export default function IslandTabs({ tabs, children }) {
         </Tabs.List>
       </YStack>
       <AnimatePresence exitBeforeEnter custom={{ direction }} initial={false}>
-        <AnimatedYStack key={currentTab}>
-          {children}
-        </AnimatedYStack>
+        <AnimatedYStack key={currentTab}>{children}</AnimatedYStack>
       </AnimatePresence>
     </Tabs>
   )

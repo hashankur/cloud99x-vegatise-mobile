@@ -31,7 +31,7 @@ export const VButton = styled(Button, {
 })
 
 const GradientWrapper = styled(LinearGradient, {
-  borderRadius: "$6",
+  borderRadius: '$6',
   width: '75%',
   mx: 'auto',
   colors: ['#C8102E', '#FB4E02'],

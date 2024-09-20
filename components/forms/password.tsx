@@ -1,5 +1,5 @@
-import { VInputCompound } from "components/ui/Input";
-import { Iconify } from "react-native-iconify";
+import { VInputCompound } from 'components/ui/Input'
+import { Iconify } from 'react-native-iconify'
 
 export function PasswordInput({ ...props }) {
   return (
@@ -12,5 +12,5 @@ export function PasswordInput({ ...props }) {
         <Iconify icon="iconamoon:eye-off" size={18} color="#5E6366" />
       </VInputCompound.Button>
     </VInputCompound>
-  );
+  )
 }

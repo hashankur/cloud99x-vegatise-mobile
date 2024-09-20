@@ -67,7 +67,7 @@ const VInputWrapper = styled(XStack, {
   alignItems: 'center',
   backgroundColor: '#EFF1F999', // Opacity 60%
   borderRadius: '$5',
-  width: "100%",
+  width: '100%',
   // flex: 1,
 })
 
@@ -87,7 +87,7 @@ const VInputButton = styled(VButton, {
         mr: '$3',
       },
     },
-  }
+  },
 })
 
 export const VInputCompound = withStaticProperties(VInputWrapper, {

@@ -28,7 +28,7 @@ export default function ForgotPasswordOtpScreen() {
           <VInput type="otp" />
         </XStack>
 
-        <VText alignSelf='center'>
+        <VText alignSelf="center">
           <VText>You should receive the OTP in </VText>
           <VText fontWeight={600} color="#D33A3A">
             30 seconds
@@ -48,9 +48,7 @@ export default function ForgotPasswordOtpScreen() {
       <VText>
         <VText>Don't Have An Account? </VText>
         <VText fontWeight={600} color="#D33A3A">
-          <Link href="/create-account">
-            Create Account
-          </Link>
+          <Link href="/create-account">Create Account</Link>
         </VText>
       </VText>
     </YStack>

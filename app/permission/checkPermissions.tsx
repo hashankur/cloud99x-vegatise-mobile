@@ -13,41 +13,58 @@ export default function PermissionRequestScreen() {
     <ScrollView>
       <YStack flex={1} alignItems="center" gap="$5" px="$5" bg="white">
         <YStack gap="$7" w="100%">
-          <YStack gap='$5'>
-            <VText type="h2" mb="$2" textAlign='center'>Check permissions </VText>
+          <YStack gap="$5">
+            <VText type="h2" mb="$2" textAlign="center">
+              Check permissions{' '}
+            </VText>
             <Image source={checkPermissionImage} width={300} objectFit="contain" />
-            <VText mb="$2" textAlign='center'>To begin accurately detecting trip information such as start and end points and locating recurring driving patterns, the following accesses are required.</VText>
+            <VText mb="$2" textAlign="center">
+              To begin accurately detecting trip information such as start and end points
+              and locating recurring driving patterns, the following accesses are
+              required.
+            </VText>
           </YStack>
-          <YStack alignItems='center' gap='$3'>
+          <YStack alignItems="center" gap="$3">
             <YStack>
-              <XStack width={'100%'} justifyContent='space-between' alignItems='center'>
-                <VText type='h2'>Locations</VText>
-                <YStack alignItems='center'>
-                  <Iconify icon='uiw:information-o' size={15} color="gray" />
-                  <VText color={granted ? "green" : "red"}>Grant Permission</VText>
+              <XStack width={'100%'} justifyContent="space-between" alignItems="center">
+                <VText type="h2">Locations</VText>
+                <YStack alignItems="center">
+                  <Iconify icon="uiw:information-o" size={15} color="gray" />
+                  <VText color={granted ? 'green' : 'red'}>Grant Permission</VText>
                 </YStack>
               </XStack>
-              <VText>This permission allows your device to capture and pass location details to this application. “Precise” locations should be enabled “while using the app”, so each trip can be reliably recorded</VText>
+              <VText>
+                This permission allows your device to capture and pass location details to
+                this application. “Precise” locations should be enabled “while using the
+                app”, so each trip can be reliably recorded
+              </VText>
             </YStack>
             <YStack>
-              <XStack width={'100%'} justifyContent='space-between' alignItems='center'>
-                <VText type='h2'>Camera</VText>
-                <YStack alignItems='center'>
-                  <Iconify icon='uiw:information-o' size={15} color="gray" />
-                  <VText color={granted ? "green" : "red"}>Grant Permission</VText>
+              <XStack width={'100%'} justifyContent="space-between" alignItems="center">
+                <VText type="h2">Camera</VText>
+                <YStack alignItems="center">
+                  <Iconify icon="uiw:information-o" size={15} color="gray" />
+                  <VText color={granted ? 'green' : 'red'}>Grant Permission</VText>
                 </YStack>
               </XStack>
-              <VText>This permission allows your device to capture and pass location details to this application. “Precise” locations should be enabled “while using the app”, so each trip can be reliably recorded</VText>
+              <VText>
+                This permission allows your device to capture and pass location details to
+                this application. “Precise” locations should be enabled “while using the
+                app”, so each trip can be reliably recorded
+              </VText>
             </YStack>
             <YStack>
-              <XStack width={'100%'} justifyContent='space-between' alignItems='center'>
-                <VText type='h2'>Activity</VText>
-                <YStack alignItems='center'>
-                  <Iconify icon='uiw:information-o' size={15} color="gray" />
-                  <VText color={granted ? "green" : "red"}>Grant Permission</VText>
+              <XStack width={'100%'} justifyContent="space-between" alignItems="center">
+                <VText type="h2">Activity</VText>
+                <YStack alignItems="center">
+                  <Iconify icon="uiw:information-o" size={15} color="gray" />
+                  <VText color={granted ? 'green' : 'red'}>Grant Permission</VText>
                 </YStack>
               </XStack>
-              <VText>Allow this permission to minimize battery usage, which enables the use physical motion to help detect starts and ends of trip.</VText>
+              <VText>
+                Allow this permission to minimize battery usage, which enables the use
+                physical motion to help detect starts and ends of trip.
+              </VText>
             </YStack>
           </YStack>
           <VButton

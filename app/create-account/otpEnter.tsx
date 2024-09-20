@@ -7,10 +7,14 @@ import { VButton } from 'components/ui/Button'
 export default function OtpEnterScreen() {
   return (
     <YStack flex={1} alignItems="center" gap="$10" px="$5" pt="$5" bg="white">
-      <VText type="h2" mb="$2">OTP Verification</VText>
-      <VText type="h2" w={300} fontWeight={500} textAlign="center">Enter The 4 Digits Number Sent To Your Mobile Number</VText>
+      <VText type="h2" mb="$2">
+        OTP Verification
+      </VText>
+      <VText type="h2" w={300} fontWeight={500} textAlign="center">
+        Enter The 4 Digits Number Sent To Your Mobile Number
+      </VText>
 
-      <YStack alignItems='center'>
+      <YStack alignItems="center">
         <XStack gap="$3.5" justifyContent="center">
           <VInput type="otp" />
           <VInput type="otp" />

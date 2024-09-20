@@ -4,19 +4,24 @@ import { VButton } from 'components/ui/Button'
 import { VInput } from 'components/ui/Input'
 import { VText } from 'components/ui/Text'
 import { Link, router } from 'expo-router'
-import {
-  Image,
-  Tabs,
-  YStack
-} from 'tamagui'
+import { Image, Tabs, YStack } from 'tamagui'
 import logo from '../../assets/images/logo.png'
 import IslandTabs from '../../components/IslandTabs'
 
 export default function LoginScreen() {
   return (
-    <YStack flex={1} alignItems="center" gap="$8" px="$5" pt="$10" backgroundColor="white">
+    <YStack
+      flex={1}
+      alignItems="center"
+      gap="$8"
+      px="$5"
+      pt="$10"
+      backgroundColor="white"
+    >
       <Image source={logo} width={200} height={50} objectFit="contain" />
-      <VText type="h2" alignSelf='flex-start'>Welcome to, Vegatise</VText>
+      <VText type="h2" alignSelf="flex-start">
+        Welcome to, Vegatise
+      </VText>
 
       <IslandTabs tabs={['Phone Number', 'Email']}>
         {/* Tab Section - Phone Number */}
@@ -58,7 +63,9 @@ export default function LoginScreen() {
         </Tabs.Content>
 
         <YStack alignItems="center" my="$8" gap="$1.5">
-          <VText type='h4' fontWeight={400}>Not Registered Yet?</VText>
+          <VText type="h4" fontWeight={400}>
+            Not Registered Yet?
+          </VText>
           <VText type="h4" color="$primary">
             <Link href="/create-account">Create An Account</Link>
           </VText>

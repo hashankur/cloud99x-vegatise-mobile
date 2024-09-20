@@ -7,10 +7,20 @@ import permissionImage from '../../assets/images/permission.png'
 
 export default function Permission() {
   return (
-    <YStack flex={1} justifyContent='center' alignItems="center" gap="$5" px="$5" pt="$5" bg="white">
+    <YStack
+      flex={1}
+      justifyContent="center"
+      alignItems="center"
+      gap="$5"
+      px="$5"
+      pt="$5"
+      bg="white"
+    >
       <YStack gap="$15" w="100%">
-        <YStack alignItems='center'>
-          <VText type="h2" mb="$2" textAlign='center'>Get Started and begin earning rewards! </VText>
+        <YStack alignItems="center">
+          <VText type="h2" mb="$2" textAlign="center">
+            Get Started and begin earning rewards!{' '}
+          </VText>
           <Image source={permissionImage} width={300} objectFit="contain" />
         </YStack>
         <VButton

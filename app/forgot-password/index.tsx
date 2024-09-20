@@ -23,19 +23,14 @@ export default function ForgotPasswordScreen() {
         <VInput type="email" />
       </YStack>
 
-      <VButton
-        type="primary"
-        onPress={() => router.navigate('/forgot-password/otp')}
-      >
+      <VButton type="primary" onPress={() => router.navigate('/forgot-password/otp')}>
         Send Code
       </VButton>
 
       <VText>
         <VText>Don't Have An Account? </VText>
         <VText fontWeight={500} color="$primary">
-          <Link href="/create-account">
-            Create Account
-          </Link>
+          <Link href="/create-account">Create Account</Link>
         </VText>
       </VText>
     </YStack>

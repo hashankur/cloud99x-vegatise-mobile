@@ -17,11 +17,11 @@ import { Paragraph, Stack } from 'tamagui'
 // import { ChevronRight } from "@tamagui/lucide-icons";
 
 export default function NextButton({ percentage, scrollTo, buttonPercentage }) {
-  const size = 60;
-  const strokeWidth = 5;
-  const center = size / 2;
-  const radius = size / 2 - strokeWidth / 2;
-  const circumference = 2 * Math.PI * radius;
+  const size = 60
+  const strokeWidth = 5
+  const center = size / 2
+  const radius = size / 2 - strokeWidth / 2
+  const circumference = 2 * Math.PI * radius
 
   const progress = useRef(new Animated.Value(0)).current
   const progressRef = useRef(null)
@@ -78,9 +78,7 @@ export default function NextButton({ percentage, scrollTo, buttonPercentage }) {
               fill="none"
               strokeWidth={strokeWidth}
               strokeDasharray={circumference}
-              strokeDashoffset={
-                circumference - (percentage * circumference) / 100
-              }
+              strokeDashoffset={circumference - (percentage * circumference) / 100}
             />
           </G>
         </Svg>

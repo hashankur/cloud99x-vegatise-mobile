@@ -10,8 +10,10 @@ export default function OtpVerifyScreen() {
     <YStack flex={1} alignItems="center" gap="$5" px="$5" pt="$5" bg="white">
       <Image source={otpImage} width={200} height={200} objectFit="contain" />
       <YStack gap="$5" w="100%">
-        <YStack alignItems='center'>
-          <VText type="h2" mb="$2">OTP Verification</VText>
+        <YStack alignItems="center">
+          <VText type="h2" mb="$2">
+            OTP Verification
+          </VText>
           <VText>An 4 Digit Code Has Been Sent To</VText>
           <VText>+94 769016274</VText>
         </YStack>

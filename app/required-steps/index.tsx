@@ -7,10 +7,14 @@ import { VListItem } from 'components/ui/ListItem'
 
 export default function RequiredStepsScreen() {
   const statusIcons = {
-    pending: <Iconify icon="heroicons:exclamation-circle-20-solid" size={20} color="#ECAD0B" />,
+    pending: (
+      <Iconify icon="heroicons:exclamation-circle-20-solid" size={20} color="#ECAD0B" />
+    ),
     review: <Iconify icon="heroicons:clock-20-solid" size={20} color="#ABAFB1" />,
     rejected: <Iconify icon="heroicons:x-circle-20-solid" size={20} color="#FA3C3C" />,
-    approved: <Iconify icon="heroicons:check-circle-20-solid" size={20} color="#71BA78" />,
+    approved: (
+      <Iconify icon="heroicons:check-circle-20-solid" size={20} color="#71BA78" />
+    ),
   }
 
   const listItems = [
@@ -61,8 +65,10 @@ export default function RequiredStepsScreen() {
     <ScrollView>
       <YStack flex={1} alignItems="center" gap="$5" px="$5" py="$5" bg="white">
         <YStack gap="$5" w="100%">
-          <YStack alignItems='center'>
-            <VText type="h2" mb="$2">Required Steps</VText>
+          <YStack alignItems="center">
+            <VText type="h2" mb="$2">
+              Required Steps
+            </VText>
             <VText>Here's What You Need To Do To Set Up Your Account</VText>
           </YStack>
 
@@ -76,8 +82,18 @@ export default function RequiredStepsScreen() {
                   pressTheme
                   title={item.title}
                   subTitle={item.status}
-                  icon={item.status === 'pending' ? statusIcons.pending : item.status === 'review' ? statusIcons.review : item.status === 'rejected' ? statusIcons.rejected : statusIcons.approved}
-                  iconAfter={<Iconify icon="heroicons:chevron-right-20-solid" size={20} />}
+                  icon={
+                    item.status === 'pending'
+                      ? statusIcons.pending
+                      : item.status === 'review'
+                        ? statusIcons.review
+                        : item.status === 'rejected'
+                          ? statusIcons.rejected
+                          : statusIcons.approved
+                  }
+                  iconAfter={
+                    <Iconify icon="heroicons:chevron-right-20-solid" size={20} />
+                  }
                   onPress={() => {
                     router.navigate(`/required-steps/${item.slug}`)
                   }}

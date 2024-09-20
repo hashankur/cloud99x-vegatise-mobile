@@ -172,7 +172,7 @@ function RootLayoutNav() {
               headerTitleStyle: {
                 color: '#F4F4F4',
                 fontSize: 20,
-                fontWeight: "bold",
+                fontWeight: 'bold',
               },
             }}
           />
