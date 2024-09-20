@@ -12,7 +12,7 @@ import { Check, ChevronDown } from '@tamagui/lucide-icons';
 import { Pressable } from 'react-native';
 
 
-export default function OtpEnterScreen() {
+export default function PersonalInfoScreen() {
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
   const [date, setDate] = useState<Date | undefined>(undefined);
 
@@ -57,7 +57,7 @@ export default function OtpEnterScreen() {
 
   return (
     <YStack flex={1} alignItems="center" gap="$5" px="$5" py="$5" bg="white">
-      <VText alignSelf="flex-start" type="h3" mb="$2">OTP Verification</VText>
+      <VText alignSelf="flex-start" type="h3" mb="$2">Personal Information</VText>
       <Pressable onPress={pickImage}>
         <Image source={image ? { uri: image } : profileImageUpload} width={160} height={160} objectFit="contain" borderRadius={12} />
       </Pressable>
