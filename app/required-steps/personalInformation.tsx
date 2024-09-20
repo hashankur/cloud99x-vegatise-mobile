@@ -2,7 +2,7 @@ import { VButtonGradient } from 'components/ui/Button';
 import { VInput } from 'components/ui/Input';
 import { VText } from 'components/ui/Text';
 import { router } from 'expo-router';
-import { useMemo, useState } from "react";
+import { SetStateAction, useMemo, useState } from "react";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import { Adapt, Image, Select, Separator, Sheet, XStack, YStack } from "tamagui";
 import profileImageUpload from '../../assets/images/profile-upload.png';
@@ -12,7 +12,7 @@ import { Check, ChevronDown } from '@tamagui/lucide-icons';
 
 export default function OtpEnterScreen() {
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
-  const [date, setDate] = useState(new Date());
+  const [date, setDate] = useState(undefined as Date | undefined);
 
   const showDatePicker = () => {
     setDatePickerVisibility(true);
@@ -22,7 +22,7 @@ export default function OtpEnterScreen() {
     setDatePickerVisibility(false);
   };
 
-  const handleConfirm = (date) => {
+  const handleConfirm = (date: SetStateAction<Date>) => {
     console.info("A date has been picked: ", date);
     setDate(date);
     hideDatePicker();
@@ -33,7 +33,7 @@ export default function OtpEnterScreen() {
     { name: 'Female' },
   ]
 
-  const [val, setVal] = useState('apple')
+  const [val, setVal] = useState(undefined as string | undefined)
 
   return (
     <YStack flex={1} alignItems="center" gap="$5" px="$5" py="$5" bg="white">
@@ -51,15 +51,15 @@ export default function OtpEnterScreen() {
         <XStack gap="$2">
           <YStack w="100%" gap="$2" f={1}>
             <VText type="label">Date Of Birth</VText>
-            <VInput type="date" placeholder="Date" onPress={showDatePicker} value={date.toLocaleDateString()} />
+            <VInput type="date" placeholder="Date" onPress={showDatePicker} value={date?.toLocaleDateString()} />
           </YStack>
 
           <YStack w="100%" gap="$2" f={1}>
             <VText type="label">Gender</VText>
 
             <Select value={val} onValueChange={setVal} disablePreventBodyScroll>
-              <Select.Trigger iconAfter={ChevronDown}>
-                <Select.Value placeholder="Something" />
+              <Select.Trigger iconAfter={ChevronDown} backgroundColor="#EFF1F999" borderWidth={0}>
+                <Select.Value placeholder="Gender" color="#5E6366" fontSize={12} />
               </Select.Trigger>
 
               <Adapt platform="touch">
