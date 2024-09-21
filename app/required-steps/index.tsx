@@ -26,6 +26,7 @@ export default function RequiredStepsScreen() {
     {
       title: 'Vehicle Information',
       status: 'pending',
+      slug: 'vehicleInformation',
     },
     {
       title: 'Address and Routes',

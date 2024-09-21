@@ -178,6 +178,22 @@ function RootLayoutNav() {
           />
 
           <Stack.Screen
+            name="required-steps/vehicleInformation"
+            options={{
+              headerTitle: 'Getting Started',
+              statusBarColor: '#C23030',
+              headerStyle: {
+                backgroundColor: '#C23030',
+              },
+              headerTitleStyle: {
+                color: '#F4F4F4',
+                fontSize: 20,
+                fontWeight: 'bold',
+              },
+            }}
+          />
+
+          <Stack.Screen
             name="permission/checkPermissions"
             options={{
               headerShadowVisible: false,
