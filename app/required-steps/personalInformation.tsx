@@ -4,12 +4,12 @@ import { VText } from 'components/ui/Text'
 import * as ImagePicker from 'expo-image-picker'
 import { router } from 'expo-router'
 import { useMemo, useState, type SetStateAction } from 'react'
+import { Pressable } from 'react-native'
+import { Iconify } from 'react-native-iconify'
 import DateTimePickerModal from 'react-native-modal-datetime-picker'
 import { Adapt, Image, Select, Separator, Sheet, XStack, YStack } from 'tamagui'
 import profileImageUpload from '../../assets/images/profile-upload.png'
-
-import { Check, ChevronDown } from '@tamagui/lucide-icons'
-import { Pressable } from 'react-native'
+import SelectInput from 'components/forms/select'
 
 export default function PersonalInfoScreen() {
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false)
@@ -28,10 +28,6 @@ export default function PersonalInfoScreen() {
     setDate(date)
     hideDatePicker()
   }
-
-  const items = [{ name: 'Male' }, { name: 'Female' }]
-
-  const [val, setVal] = useState<string | undefined>(undefined)
 
   const [image, setImage] = useState<string | null>(null)
 
@@ -76,7 +72,7 @@ export default function PersonalInfoScreen() {
           <VInput placeholder="Abdurrahman Ahamed" />
         </YStack>
 
-        <XStack gap="$2">
+        <XStack gap="$4">
           <YStack w="100%" gap="$2" f={1}>
             <VText type="label">Date Of Birth</VText>
             <VInput
@@ -89,53 +85,7 @@ export default function PersonalInfoScreen() {
 
           <YStack w="100%" gap="$2" f={1}>
             <VText type="label">Gender</VText>
-
-            <Select value={val} onValueChange={setVal} disablePreventBodyScroll>
-              <Select.Trigger
-                iconAfter={ChevronDown}
-                backgroundColor="#EFF1F999"
-                borderWidth={0}
-              >
-                <Select.Value placeholder="Gender" color="#5E6366" fontSize={12} />
-              </Select.Trigger>
-
-              <Adapt platform="touch">
-                <Sheet modal dismissOnSnapToBottom snapPointsMode="fit">
-                  <Sheet.Frame>
-                    <Sheet.ScrollView>
-                      <Adapt.Contents />
-                    </Sheet.ScrollView>
-                  </Sheet.Frame>
-                  <Sheet.Overlay />
-                </Sheet>
-              </Adapt>
-
-              <Select.Content>
-                <Select.Viewport>
-                  <Select.Group>
-                    {/* for longer lists memoizing these is useful */}
-                    {useMemo(
-                      () =>
-                        items.map((item, i) => {
-                          return (
-                            <Select.Item
-                              index={i}
-                              key={item.name}
-                              value={item.name.toLowerCase()}
-                            >
-                              <Select.ItemText>{item.name}</Select.ItemText>
-                              <Select.ItemIndicator marginLeft="auto">
-                                <Check size={16} />
-                              </Select.ItemIndicator>
-                            </Select.Item>
-                          )
-                        }),
-                      [items]
-                    )}
-                  </Select.Group>
-                </Select.Viewport>
-              </Select.Content>
-            </Select>
+            <SelectInput placeholder="Gender" items={['Male', 'Female']} />
           </YStack>
         </XStack>
 
