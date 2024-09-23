@@ -31,6 +31,7 @@ export default function RequiredStepsScreen() {
     {
       title: 'Address and Routes',
       status: 'pending',
+      slug: 'addressRoutes',
     },
     {
       title: 'Driving License',
