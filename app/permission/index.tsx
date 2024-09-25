@@ -1,5 +1,5 @@
 import PhoneInput from 'components/forms/phone'
-import { VButton } from 'components/ui/Button'
+import { VButton, VButtonGradient } from 'components/ui/Button'
 import { VText } from 'components/ui/Text'
 import { router } from 'expo-router'
 import { Image, YStack } from 'tamagui'
@@ -13,14 +13,14 @@ export default function Permission() {
           <VText type="h2" mb="$2" textAlign='center'>Get Started and begin earning rewards! </VText>
           <Image source={permissionImage} width={300} objectFit="contain" />
         </YStack>
-        <VButton
-          type="primary"
-          onPress={() => {
-            router.navigate('/permission/checkPermissions')
-          }}
-        >
-          Next
-        </VButton>
+        <VButtonGradient>
+          <VButtonGradient.Button 
+          type='gradient' 
+          height={73}
+          onPress={() => router.navigate('/permission/checkPermissions')}>
+            Get Started
+          </VButtonGradient.Button>
+        </VButtonGradient>
       </YStack>
     </YStack>
   )
