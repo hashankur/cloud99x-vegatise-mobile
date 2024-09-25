@@ -14,9 +14,21 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "This app requires access to your location to track your vehicle.",
+        "NSCameraUsageDescription": "This app requires access to your camera to take photos.",
+        "NSPhotoLibraryUsageDescription": "This app requires access to your photo library to save trip data."
+      },
       "supportsTablet": true
     },
     "android": {
+      "permissions":[
+        "ACCESS_FINE_LOCATION",
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+      ],
+
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
