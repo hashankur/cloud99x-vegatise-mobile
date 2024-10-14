@@ -5,6 +5,7 @@ import { VText } from 'components/ui/Text'
 import { Link, router } from 'expo-router'
 import { Image, Paragraph, ScrollView, YStack } from 'tamagui'
 import logo from '../../assets/images/logo.png'
+import { VContainer } from 'components/ui/Container'
 
 export default function CreateAccountScreen() {
   return (
@@ -19,43 +20,43 @@ export default function CreateAccountScreen() {
       >
         <Image source={logo} width={200} height={50} objectFit="contain" />
 
-        <YStack w="100%">
+        <VContainer>
           <VText type="h2" my={10}>
             Create An Account
           </VText>
           <Paragraph fontSize={12} maxWidth={250}>
             Please complete all input fields to create your account
           </Paragraph>
-        </YStack>
+        </VContainer>
 
-        <YStack w="100%" gap="$2">
+        <VContainer type="input">
           <VText type="label">Full Name</VText>
           <VInput placeholder="First Name, Last Name" />
-        </YStack>
+        </VContainer>
 
-        <YStack w="100%" gap="$2">
+        <VContainer type="input">
           <VText type="label">Email Address</VText>
           <VInput type="email" placeholder="Email@domain.com" />
-        </YStack>
+        </VContainer>
 
-        <YStack w="100%" gap="$2">
+        <VContainer type="input">
           <VText type="label">Password</VText>
           <PasswordInput />
-        </YStack>
+        </VContainer>
 
-        <YStack w="100%" gap="$2">
+        <VContainer type="input">
           <VText type="label">Confirm Password</VText>
           <PasswordInput />
-        </YStack>
+        </VContainer>
 
-        <YStack w="100%">
+        <VContainer>
           <VButton
             type="primary"
             onPress={() => router.navigate('/create-account/otpRequest')}
           >
             Next
           </VButton>
-        </YStack>
+        </VContainer>
 
         <YStack>
           <VText>

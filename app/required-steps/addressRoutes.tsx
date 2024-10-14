@@ -1,5 +1,6 @@
 import SelectInput from 'components/forms/select'
 import { VButtonGradient } from 'components/ui/Button'
+import { VContainer } from 'components/ui/Container'
 import { VInput } from 'components/ui/Input'
 import { VText } from 'components/ui/Text'
 import { router } from 'expo-router'
@@ -13,13 +14,13 @@ export default function VehicleInfoScreen() {
           Address And Routes
         </VText>
 
-        <YStack gap="$5" w="100%">
-          <YStack w="100%" gap="$2">
+        <VContainer grouped>
+          <VContainer type="input">
             <VText type="label">Address Line 1</VText>
             <VInput placeholder="259/73 Rajagiriya" />
-          </YStack>
+          </VContainer>
 
-          <YStack w="100%" gap="$2">
+          <VContainer type="input">
             <VText>
               <VText type="label">Address Line 2</VText>
               <VText type="label" fontWeight={400}>
@@ -27,9 +28,9 @@ export default function VehicleInfoScreen() {
               </VText>
             </VText>
             <VInput placeholder="05, Colombo 06" />
-          </YStack>
+          </VContainer>
 
-          <YStack w="100%" gap="$2">
+          <VContainer type="input">
             <VText>
               <VText type="label">If Commuting Please State Work Address</VText>
               <VText type="label" fontWeight={400}>
@@ -37,41 +38,45 @@ export default function VehicleInfoScreen() {
               </VText>
             </VText>
             <VInput placeholder="World Trade Center 7/02" />
-          </YStack>
+          </VContainer>
 
-          <XStack gap="$4">
-            <YStack w="100%" gap="$2" f={1}>
+          <VContainer.Split>
+            <VContainer half>
               <VText type="label">City</VText>
               <SelectInput placeholder="Colombo" items={[]} />
-            </YStack>
+            </VContainer>
 
-            <YStack w="100%" gap="$2" f={1}>
+            <VContainer half>
               <VText type="label">Province</VText>
               <SelectInput placeholder="Western" items={[]} />
-            </YStack>
-          </XStack>
+            </VContainer>
+          </VContainer.Split>
 
-          <YStack w="100%" gap="$2">
+          <VContainer type="input">
             <VText>
               <VText type="label">Average Kilometers (KM) Per Day</VText>
             </VText>
             <VInput placeholder="10 KM" />
-          </YStack>
+          </VContainer>
 
-          <YStack gap="$2">
+          <VContainer type="input">
             <VText type="label">On Average Which Routes Do You Travel</VText>
-            <XStack gap="$4">
-              <YStack w="100%" gap="$2" f={1}>
-                <VText type="label">From</VText>
+            <VContainer.Split>
+              <VContainer half>
+                <VText type="label" fontWeight={400} fontSize={10}>
+                  From
+                </VText>
                 <VInput placeholder="Borella" />
-              </YStack>
+              </VContainer>
 
-              <YStack w="100%" gap="$2" f={1}>
-                <VText type="label">To</VText>
+              <VContainer half>
+                <VText type="label" fontWeight={400} fontSize={10}>
+                  To
+                </VText>
                 <VInput placeholder="Galle Road" />
-              </YStack>
-            </XStack>
-          </YStack>
+              </VContainer>
+            </VContainer.Split>
+          </VContainer>
 
           <VButtonGradient>
             <VButtonGradient.Button
@@ -83,7 +88,7 @@ export default function VehicleInfoScreen() {
               Submit
             </VButtonGradient.Button>
           </VButtonGradient>
-        </YStack>
+        </VContainer>
       </YStack>
     </ScrollView>
   )

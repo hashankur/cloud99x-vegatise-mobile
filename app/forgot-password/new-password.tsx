@@ -1,5 +1,6 @@
 import { PasswordInput } from 'components/forms/password'
 import { VButton } from 'components/ui/Button'
+import { VContainer } from 'components/ui/Container'
 import { VInput } from 'components/ui/Input'
 import { VText } from 'components/ui/Text'
 import { Controller, useForm } from 'react-hook-form'
@@ -22,7 +23,7 @@ export default function CreateNewPasswordScreen() {
     <YStack flex={1} alignItems="center" gap="$10" px="$5" pt="$5" bg="white">
       <VText type="h2">Create New Password</VText>
 
-      <YStack w="100%" gap="$2">
+      <VContainer type="input">
         <VText type="label">Enter New Password</VText>
         <Controller
           control={control}
@@ -56,9 +57,9 @@ export default function CreateNewPasswordScreen() {
           </VText>
           .
         </VText>
-      </YStack>
+      </VContainer>
 
-      <YStack w="100%" gap="$2">
+      <VContainer type="input">
         <VText type="label">Confirm Password</VText>
         <Controller
           control={control}
@@ -71,7 +72,7 @@ export default function CreateNewPasswordScreen() {
           name="confirmPassword"
         />
         {/* {errors.confirmPassword && <Text>This is required.</Text>} */}
-      </YStack>
+      </VContainer>
 
       <VButton
         type="primary"

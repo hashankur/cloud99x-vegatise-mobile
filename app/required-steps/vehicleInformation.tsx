@@ -1,5 +1,6 @@
 import SelectInput from 'components/forms/select'
 import { VButtonGradient } from 'components/ui/Button'
+import { VContainer } from 'components/ui/Container'
 import { VInput } from 'components/ui/Input'
 import { VText } from 'components/ui/Text'
 import { router } from 'expo-router'
@@ -13,8 +14,8 @@ export default function VehicleInfoScreen() {
           Vehicle Information
         </VText>
 
-        <YStack gap="$5" w="100%">
-          <YStack w="100%" gap="$2">
+        <VContainer grouped>
+          <VContainer type="input">
             <VText type="label">Car Type</VText>
             <SelectInput
               placeholder="SUV"
@@ -28,41 +29,41 @@ export default function VehicleInfoScreen() {
                 'Pickup Truck',
               ]}
             />
-          </YStack>
+          </VContainer>
 
-          <XStack gap="$4">
-            <YStack w="100%" gap="$2" f={1}>
+          <VContainer.Split>
+            <VContainer type="input" half>
               <VText type="label">Car Brand</VText>
               <VInput placeholder="Toyota" />
-            </YStack>
+            </VContainer>
 
-            <YStack w="100%" gap="$2" f={1}>
+            <VContainer type="input" half>
               <VText type="label">Car Model</VText>
               <VInput placeholder="CHR" />
-            </YStack>
-          </XStack>
+            </VContainer>
+          </VContainer.Split>
 
-          <YStack w="100%" gap="$2">
+          <VContainer type="input">
             <VText type="label">Car Number Plate</VText>
             <VInput placeholder="BHP 4080" />
-          </YStack>
+          </VContainer>
 
-          <XStack gap="$4">
-            <YStack w="100%" gap="$2" f={1}>
+          <VContainer.Split>
+            <VContainer type="input" half>
               <VText type="label">Year of Making the Car</VText>
               <SelectInput
                 placeholder={2018}
                 items={Array.from({ length: 41 }, (_, index) => 2000 + index)}
               />
-            </YStack>
+            </VContainer>
 
-            <YStack w="100%" gap="$2" f={1}>
+            <VContainer type="input" half>
               <VText type="label">Car Color</VText>
               <VInput placeholder="Black" />
-            </YStack>
-          </XStack>
+            </VContainer>
+          </VContainer.Split>
 
-          <YStack w="100%" gap="$2">
+          <VContainer type="input">
             <VText type="label">Your Identity</VText>
             <RadioGroup gap="$2" name="identity">
               <XStack gap="$4">
@@ -79,9 +80,9 @@ export default function VehicleInfoScreen() {
                 <VText>I Am Not The Owner Of The Vehicle</VText>
               </XStack>
             </RadioGroup>
-          </YStack>
+          </VContainer>
 
-          <YStack w="100%" gap="$2">
+          <VContainer type="input">
             <VText type="label">Car Usage</VText>
             <RadioGroup gap="$2" name="usage">
               <XStack gap="$4">
@@ -105,7 +106,7 @@ export default function VehicleInfoScreen() {
                 <VText>Rent A Car</VText>
               </XStack>
             </RadioGroup>
-          </YStack>
+          </VContainer>
 
           <VButtonGradient>
             <VButtonGradient.Button
@@ -117,7 +118,7 @@ export default function VehicleInfoScreen() {
               Submit
             </VButtonGradient.Button>
           </VButtonGradient>
-        </YStack>
+        </VContainer>
       </YStack>
     </ScrollView>
   )

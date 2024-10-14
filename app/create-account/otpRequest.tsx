@@ -4,6 +4,7 @@ import { VText } from 'components/ui/Text'
 import { router } from 'expo-router'
 import { Image, YStack } from 'tamagui'
 import otpImage from '../../assets/images/otp.png'
+import { VContainer } from 'components/ui/Container'
 
 export default function OtpRequestScreen() {
   return (
@@ -19,10 +20,10 @@ export default function OtpRequestScreen() {
           </VText>
         </YStack>
 
-        <YStack w="100%" gap="$2">
+        <VContainer type="input">
           <VText type="label">Phone Number</VText>
           <PhoneInput />
-        </YStack>
+        </VContainer>
         <VButton
           type="primary"
           onPress={() => {

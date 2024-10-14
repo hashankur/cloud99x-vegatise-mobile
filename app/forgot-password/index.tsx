@@ -4,6 +4,7 @@ import { Link, router } from 'expo-router'
 import { VInput } from 'components/ui/Input'
 import { VText } from 'components/ui/Text'
 import { VButton } from 'components/ui/Button'
+import { VContainer } from 'components/ui/Container'
 
 export default function ForgotPasswordScreen() {
   return (
@@ -18,10 +19,10 @@ export default function ForgotPasswordScreen() {
       <Image source={logo} width={200} height={50} objectFit="contain" />
       <VText type="h2">Forgot Your Password?</VText>
 
-      <YStack w="100%" gap="$2">
+      <VContainer type="input">
         <VText type="label">Enter Email Address</VText>
         <VInput type="email" />
-      </YStack>
+      </VContainer>
 
       <VButton type="primary" onPress={() => router.navigate('/forgot-password/otp')}>
         Send Code

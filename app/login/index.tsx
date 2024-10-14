@@ -7,6 +7,7 @@ import { Link, router } from 'expo-router'
 import { Image, Tabs, YStack } from 'tamagui'
 import logo from '../../assets/images/logo.png'
 import IslandTabs from '../../components/IslandTabs'
+import { VContainer } from 'components/ui/Container'
 
 export default function LoginScreen() {
   return (
@@ -26,10 +27,10 @@ export default function LoginScreen() {
       <IslandTabs tabs={['Phone Number', 'Email']}>
         {/* Tab Section - Phone Number */}
         <Tabs.Content value="tab1" gap="$5">
-          <YStack gap="$2">
+          <VContainer type="input">
             <VText type="label">Phone Number</VText>
             <PhoneInput />
-          </YStack>
+          </VContainer>
 
           <VButton
             type="primary"
@@ -43,19 +44,19 @@ export default function LoginScreen() {
 
         {/* Tab Section - Email */}
         <Tabs.Content value="tab2" gap="$5">
-          <YStack gap="$2">
+          <VContainer type="input">
             <VText type="label">Email Address</VText>
             <VInput placeholder="email@domain.com" type="email" />
-          </YStack>
+          </VContainer>
 
-          <YStack gap="$2" w="100%">
+          <VContainer type="input">
             <VText type="label">Password</VText>
             <PasswordInput />
 
             <VText color="$link" textAlign="right">
               <Link href="/forgot-password">Forgot Password?</Link>
             </VText>
-          </YStack>
+          </VContainer>
 
           <VButton type="primary" onPress={() => router.navigate('/required-steps')}>
             Login

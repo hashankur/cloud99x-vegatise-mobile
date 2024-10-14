@@ -3,13 +3,13 @@ import { VInput } from 'components/ui/Input'
 import { VText } from 'components/ui/Text'
 import * as ImagePicker from 'expo-image-picker'
 import { router } from 'expo-router'
-import { useMemo, useState, type SetStateAction } from 'react'
+import { useState, type SetStateAction } from 'react'
 import { Pressable } from 'react-native'
-import { Iconify } from 'react-native-iconify'
 import DateTimePickerModal from 'react-native-modal-datetime-picker'
-import { Adapt, Image, Select, Separator, Sheet, XStack, YStack } from 'tamagui'
+import { Image, Separator, XStack, YStack } from 'tamagui'
 import profileImageUpload from '../../assets/images/profile-upload.png'
 import SelectInput from 'components/forms/select'
+import { VContainer } from 'components/ui/Container'
 
 export default function PersonalInfoScreen() {
   const [isDatePickerVisible, setDatePickerVisibility] = useState(false)
@@ -66,14 +66,14 @@ export default function PersonalInfoScreen() {
       </VText>
       <Separator borderColor="#DADADA" width="75%" />
 
-      <YStack gap="$5" w="100%">
-        <YStack w="100%" gap="$2">
+      <VContainer grouped>
+        <VContainer type="input">
           <VText type="label">Full Name</VText>
           <VInput placeholder="Abdurrahman Ahamed" />
-        </YStack>
+        </VContainer>
 
-        <XStack gap="$4">
-          <YStack w="100%" gap="$2" f={1}>
+        <VContainer.Split>
+          <VContainer type="input" half>
             <VText type="label">Date Of Birth</VText>
             <VInput
               type="date"
@@ -81,18 +81,18 @@ export default function PersonalInfoScreen() {
               onPress={showDatePicker}
               value={date?.toLocaleDateString()}
             />
-          </YStack>
+          </VContainer>
 
-          <YStack w="100%" gap="$2" f={1}>
+          <VContainer type="input" half>
             <VText type="label">Gender</VText>
             <SelectInput placeholder="Gender" items={['Male', 'Female']} />
-          </YStack>
-        </XStack>
+          </VContainer>
+        </VContainer.Split>
 
-        <YStack w="100%" gap="$2">
+        <VContainer type="input">
           <VText type="label">Email</VText>
           <VInput type="email" placeholder="vegatise@domain" />
-        </YStack>
+        </VContainer>
 
         <VButtonGradient>
           <VButtonGradient.Button
@@ -104,7 +104,7 @@ export default function PersonalInfoScreen() {
             Save
           </VButtonGradient.Button>
         </VButtonGradient>
-      </YStack>
+      </VContainer>
 
       <DateTimePickerModal
         isVisible={isDatePickerVisible}
