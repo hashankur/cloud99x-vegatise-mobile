@@ -36,6 +36,7 @@ export default function RequiredStepsScreen() {
     {
       title: 'Driving License',
       status: 'pending',
+      slug: 'drivingLicense',
     },
     {
       title: 'NIC Information',

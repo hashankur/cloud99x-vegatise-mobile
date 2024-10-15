@@ -33,6 +33,11 @@ export const VText = styled(SizableText, {
         fontWeight: 600,
         color: '$label',
       },
+      description: {
+        fontSize: 9,
+        fontWeight: 500,
+        lineHeight: '$1',
+      },
     },
     // size: {
     //   '...size': (size, { tokens }) => {
