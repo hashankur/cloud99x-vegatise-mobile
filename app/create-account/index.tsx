@@ -1,4 +1,4 @@
-import { PasswordInput } from 'components/forms/password'
+import { PasswordInput } from 'components/forms/Password'
 import { VButton } from 'components/ui/Button'
 import { VInput } from 'components/ui/Input'
 import { VText } from 'components/ui/Text'

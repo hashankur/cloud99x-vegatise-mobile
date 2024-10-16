@@ -1,4 +1,4 @@
-import PhoneInput from 'components/forms/phone'
+import PhoneInput from 'components/forms/Phone'
 import { VButton } from 'components/ui/Button'
 import { VText } from 'components/ui/Text'
 import { router } from 'expo-router'

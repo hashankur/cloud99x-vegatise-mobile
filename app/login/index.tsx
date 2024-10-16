@@ -1,5 +1,5 @@
-import { PasswordInput } from 'components/forms/password'
-import PhoneInput from 'components/forms/phone'
+import { PasswordInput } from 'components/forms/Password'
+import PhoneInput from 'components/forms/Phone'
 import { VButton } from 'components/ui/Button'
 import { VInput } from 'components/ui/Input'
 import { VText } from 'components/ui/Text'

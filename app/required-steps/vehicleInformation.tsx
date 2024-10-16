@@ -1,4 +1,4 @@
-import SelectInput from 'components/forms/select'
+import SelectInput from 'components/forms/Select'
 import { VButtonGradient } from 'components/ui/Button'
 import { VContainer } from 'components/ui/Container'
 import { VInput } from 'components/ui/Input'
