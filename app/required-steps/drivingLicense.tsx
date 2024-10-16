@@ -1,4 +1,5 @@
 import SelectInput from 'components/forms/select'
+import DatePicker from 'components/forms/DatePicker'
 import { VButtonGradient } from 'components/ui/Button'
 import { VContainer } from 'components/ui/Container'
 import { VInput } from 'components/ui/Input'
@@ -52,7 +53,7 @@ export default function DrivingLicenseScreen() {
 
           <VContainer type="input">
             <VText type="label">Expiration Date</VText>
-            <VInput placeholder="Date" />
+            <DatePicker />
           </VContainer>
 
           <VContainer.Split alignItems="center">

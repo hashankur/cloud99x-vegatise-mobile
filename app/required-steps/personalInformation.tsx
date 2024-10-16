@@ -5,30 +5,13 @@ import * as ImagePicker from 'expo-image-picker'
 import { router } from 'expo-router'
 import { useState, type SetStateAction } from 'react'
 import { Pressable } from 'react-native'
-import DateTimePickerModal from 'react-native-modal-datetime-picker'
 import { Image, Separator, XStack, YStack } from 'tamagui'
 import profileImageUpload from '../../assets/images/profile-upload.png'
-import SelectInput from 'components/forms/select'
+import SelectInput from 'components/forms/Select'
 import { VContainer } from 'components/ui/Container'
+import DatePicker from 'components/forms/DatePicker'
 
 export default function PersonalInfoScreen() {
-  const [isDatePickerVisible, setDatePickerVisibility] = useState(false)
-  const [date, setDate] = useState<Date | undefined>(undefined)
-
-  const showDatePicker = () => {
-    setDatePickerVisibility(true)
-  }
-
-  const hideDatePicker = () => {
-    setDatePickerVisibility(false)
-  }
-
-  const handleConfirm = (date: SetStateAction<Date | undefined>) => {
-    console.info('A date has been picked: ', date)
-    setDate(date)
-    hideDatePicker()
-  }
-
   const [image, setImage] = useState<string | null>(null)
 
   const pickImage = async () => {
@@ -75,12 +58,7 @@ export default function PersonalInfoScreen() {
         <VContainer.Split>
           <VContainer type="input" half>
             <VText type="label">Date Of Birth</VText>
-            <VInput
-              type="date"
-              placeholder="Date"
-              onPress={showDatePicker}
-              value={date?.toLocaleDateString()}
-            />
+            <DatePicker />
           </VContainer>
 
           <VContainer type="input" half>
@@ -105,13 +83,6 @@ export default function PersonalInfoScreen() {
           </VButtonGradient.Button>
         </VButtonGradient>
       </VContainer>
-
-      <DateTimePickerModal
-        isVisible={isDatePickerVisible}
-        mode="date"
-        onConfirm={handleConfirm}
-        onCancel={hideDatePicker}
-      />
     </YStack>
   )
 }
