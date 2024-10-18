@@ -45,7 +45,7 @@ export default function DrivingLicenseScreen() {
 
           <VContainer type="input">
             <VText type="label">Expiration Date</VText>
-            <DatePicker />
+            <DatePicker hasIcon />
           </VContainer>
 
           <VContainer.Split alignItems="center">

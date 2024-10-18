@@ -41,6 +41,8 @@ export const VInput = styled(Input, {
       date: {
         textContentType: 'birthdate',
         showSoftInputOnFocus: false,
+        caretHidden: true,
+        flex: 1,
       },
     },
     state: {
