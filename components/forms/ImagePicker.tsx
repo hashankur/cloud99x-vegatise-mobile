@@ -16,7 +16,7 @@ export default function ImagePicker({ type }) {
     let result = await launchImageLibraryAsync({
       mediaTypes: MediaTypeOptions.Images,
       allowsEditing: true,
-      aspect: [1, 1], // Square image
+      aspect: type === 'profile' ? [1, 1] : undefined, // Square image for profile image
       quality: 1,
     })
     console.info(result)
@@ -36,6 +36,8 @@ export default function ImagePicker({ type }) {
           objectFit="contain"
           borderRadius={12}
         />
+      ) : image ? (
+        <Image source={{ uri: image }} height={200} objectFit="fill" borderRadius={20} />
       ) : (
         <VContainer
           borderColor="#C5D0E6"
