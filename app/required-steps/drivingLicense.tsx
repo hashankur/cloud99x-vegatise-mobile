@@ -1,5 +1,5 @@
-import SelectInput from 'components/forms/select'
 import DatePicker from 'components/forms/DatePicker'
+import ImagePicker from 'components/forms/ImagePicker'
 import { VButtonGradient } from 'components/ui/Button'
 import { VContainer } from 'components/ui/Container'
 import { VInput } from 'components/ui/Input'
@@ -7,7 +7,7 @@ import { VText } from 'components/ui/Text'
 import { router } from 'expo-router'
 import { useState } from 'react'
 import { Iconify } from 'react-native-iconify'
-import { Checkbox, RadioGroup, ScrollView, XStack, YStack } from 'tamagui'
+import { Checkbox, ScrollView, YStack } from 'tamagui'
 
 export default function DrivingLicenseScreen() {
   const [checked, setChecked] = useState(false)
@@ -30,20 +30,12 @@ export default function DrivingLicenseScreen() {
         <VContainer grouped>
           <VContainer type="input">
             <VText type="label">Driving License Front</VText>
-            <VContainer borderColor="#C5D0E6" borderWidth={1} borderRadius={20} p="$5">
-              <VText alignSelf="center" color="$primary" fontWeight={600}>
-                Add Your Photos Here
-              </VText>
-            </VContainer>
+            <ImagePicker type="form" />
           </VContainer>
 
           <VContainer type="input">
             <VText type="label">Driving License Rear</VText>
-            <VContainer borderColor="#C5D0E6" borderWidth={1} borderRadius={20} p="$5">
-              <VText alignSelf="center" color="$primary" fontWeight={600}>
-                Add Your Photos Here
-              </VText>
-            </VContainer>
+            <ImagePicker type="form" />
           </VContainer>
 
           <VContainer type="input">

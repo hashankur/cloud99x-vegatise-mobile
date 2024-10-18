@@ -1,49 +1,22 @@
+import DatePicker from 'components/forms/DatePicker'
+import ImagePicker from 'components/forms/ImagePicker'
+import SelectInput from 'components/forms/Select'
 import { VButtonGradient } from 'components/ui/Button'
+import { VContainer } from 'components/ui/Container'
 import { VInput } from 'components/ui/Input'
 import { VText } from 'components/ui/Text'
-import * as ImagePicker from 'expo-image-picker'
 import { router } from 'expo-router'
-import { useState, type SetStateAction } from 'react'
-import { Pressable } from 'react-native'
-import { Image, Separator, XStack, YStack } from 'tamagui'
-import profileImageUpload from '../../assets/images/profile-upload.png'
-import SelectInput from 'components/forms/Select'
-import { VContainer } from 'components/ui/Container'
-import DatePicker from 'components/forms/DatePicker'
+import { Separator, YStack } from 'tamagui'
 
 export default function PersonalInfoScreen() {
-  const [image, setImage] = useState<string | null>(null)
-
-  const pickImage = async () => {
-    // https://docs.expo.dev/versions/latest/sdk/imagepicker/
-    // No permissions request is necessary for launching the image library
-    let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images,
-      allowsEditing: true,
-      aspect: [1, 1], // Square image
-      quality: 1,
-    })
-    console.info(result)
-
-    if (!result.canceled) {
-      setImage(result.assets[0].uri)
-    }
-  }
-
   return (
     <YStack flex={1} alignItems="center" gap="$5" px="$5" py="$5" bg="white">
       <VText alignSelf="flex-start" type="h3" mb="$2">
         Personal Information
       </VText>
-      <Pressable onPress={pickImage}>
-        <Image
-          source={image ? { uri: image } : profileImageUpload}
-          width={160}
-          height={160}
-          objectFit="contain"
-          borderRadius={12}
-        />
-      </Pressable>
+
+      <ImagePicker type="profile" />
+
       <VText alignSelf="center" color="$primary" fontWeight={600}>
         Upload Profile Photo
       </VText>
