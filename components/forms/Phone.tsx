@@ -20,7 +20,7 @@ export default function PhoneInput() {
       </Select>
 
       <VInputCompound f={1}>
-        <VInputCompound.Input f={1} placeholder="769016274" />
+        <VInputCompound.Input type="phone" placeholder="769016274" />
         <VInputCompound.Button iconRight backgroundColor="#c6eadd">
           <Iconify icon="mingcute:check-fill" size={14} color="green" />
         </VInputCompound.Button>

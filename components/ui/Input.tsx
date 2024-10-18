@@ -18,14 +18,15 @@ export const VInput = styled(Input, {
         textContentType: 'emailAddress',
       },
       password: {
-        secureTextEntry: true,
         textContentType: 'password',
         backgroundColor: 'transparent',
+        flex: 1,
       },
       phone: {
         keyboardType: 'phone-pad',
         textContentType: 'telephoneNumber',
         backgroundColor: 'transparent',
+        flex: 1,
       },
       otp: {
         keyboardType: 'number-pad',
