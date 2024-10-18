@@ -41,6 +41,7 @@ export default function RequiredStepsScreen() {
     {
       title: 'NIC Information',
       status: 'pending',
+      slug: 'nicInformation',
     },
     {
       title: 'Vehicle Image',
@@ -53,10 +54,12 @@ export default function RequiredStepsScreen() {
     {
       title: 'Revenue License',
       status: 'pending',
+      slug: 'revenueLicense',
     },
     {
       title: 'Vehicle Insurance',
       status: 'pending',
+      slug: 'vehicleInsurance',
     },
     {
       title: 'Billing Proof (Optional)',
