@@ -46,10 +46,12 @@ export default function RequiredStepsScreen() {
     {
       title: 'Vehicle Image',
       status: 'pending',
+      slug: 'vehicleImage',
     },
     {
       title: 'Vehicle Registration Document',
       status: 'pending',
+      slug: 'vehicleRegistration',
     },
     {
       title: 'Revenue License',
@@ -64,6 +66,7 @@ export default function RequiredStepsScreen() {
     {
       title: 'Billing Proof (Optional)',
       status: 'pending',
+      slug: 'billingDocument',
     },
   ]
 

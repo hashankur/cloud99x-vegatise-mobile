@@ -1,8 +1,9 @@
+import { VInputCompound } from 'components/ui/Input'
 import { Key, useMemo, useState } from 'react'
 import { Iconify } from 'react-native-iconify'
 import { Adapt, Select, Sheet } from 'tamagui'
 
-export default function SelectInput({ placeholder, items }) {
+export default function SelectInput({ placeholder, items, hasIcon = false }) {
   const [val, setVal] = useState<string | undefined>(undefined)
 
   const icons = {
@@ -12,13 +13,21 @@ export default function SelectInput({ placeholder, items }) {
 
   return (
     <Select value={val} onValueChange={setVal} disablePreventBodyScroll>
-      <Select.Trigger
-        iconAfter={icons.chevron}
-        backgroundColor="#EFF1F999"
-        borderWidth={0}
-      >
-        <Select.Value placeholder={placeholder} color="#5E6366" fontSize={12} />
-      </Select.Trigger>
+      <VInputCompound>
+        {hasIcon && (
+          <VInputCompound.Button iconLeft>
+            <Iconify icon="mingcute:bill-line" size={20} color="black" />
+          </VInputCompound.Button>
+        )}
+        <Select.Trigger
+          iconAfter={icons.chevron}
+          backgroundColor="#EFF1F999"
+          borderWidth={0}
+          flex={1}
+        >
+          <Select.Value placeholder={placeholder} color="#5E6366" fontSize={12} />
+        </Select.Trigger>
+      </VInputCompound>
 
       <Adapt platform="touch">
         <Sheet

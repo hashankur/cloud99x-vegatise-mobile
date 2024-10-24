@@ -6,7 +6,7 @@ import { VText } from 'components/ui/Text'
 import { router } from 'expo-router'
 import { RadioGroup, ScrollView, XStack, YStack } from 'tamagui'
 
-export default function VehicleInfoScreen() {
+export default function AddressRoutesScreen() {
   return (
     <ScrollView>
       <YStack flex={1} alignItems="center" gap="$5" px="$5" py="$5" bg="white">
