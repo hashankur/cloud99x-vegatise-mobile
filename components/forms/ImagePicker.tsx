@@ -26,32 +26,40 @@ export default function ImagePicker({ type }) {
     }
   }
 
+  const profileUpload = () => {
+    return (
+      <Image
+        source={image ? { uri: image } : profileImageUpload}
+        width={160}
+        height={160}
+        objectFit="contain"
+        borderRadius={12}
+      />
+    )
+  }
+
+  const formUpload = () => {
+    return image ? (
+      <Image source={{ uri: image }} height={200} objectFit="fill" borderRadius={20} />
+    ) : (
+      <VContainer
+        borderColor="#C5D0E6"
+        borderWidth={1}
+        borderRadius={20}
+        p="$4"
+        alignItems="center"
+      >
+        <Iconify icon="akar-icons:camera" size={20} color="black" />
+        <VText color="$primary" fontWeight={600} mt="$2">
+          Add Your Photos Here
+        </VText>
+      </VContainer>
+    )
+  }
+
   return (
     <Pressable onPress={pickImage}>
-      {type === 'profile' ? (
-        <Image
-          source={image ? { uri: image } : profileImageUpload}
-          width={160}
-          height={160}
-          objectFit="contain"
-          borderRadius={12}
-        />
-      ) : image ? (
-        <Image source={{ uri: image }} height={200} objectFit="fill" borderRadius={20} />
-      ) : (
-        <VContainer
-          borderColor="#C5D0E6"
-          borderWidth={1}
-          borderRadius={20}
-          p="$4"
-          alignItems="center"
-        >
-          <Iconify icon="akar-icons:camera" size={20} color="black" />
-          <VText color="$primary" fontWeight={600} mt="$2">
-            Add Your Photos Here
-          </VText>
-        </VContainer>
-      )}
+      {type === 'profile' ? profileUpload : formUpload}
     </Pressable>
   )
 }
